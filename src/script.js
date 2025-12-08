@@ -53,10 +53,6 @@
    advances by 1 card with left/right arrows, and adapts on smaller screens.
 */
 
-/* team.js
-   Show exactly 3 members per row on desktop, advance by 1 with arrows.
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.team-container');
   const members = Array.from(container?.querySelectorAll('.team-member') || []);
