@@ -8,26 +8,26 @@
     top: 0;
     position: relative;
 }
-h1{
+
+h1 {
     position: relative;
     margin: auto;
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    left: -120px;
+    left: 0px;
 }
+
 .header-list {
     display: flex;
     margin-right: 10px;
     font-family: "Roboto", sans-serif;
-    
 }
 
 .header-list li {
     list-style: none;
-    font-size: 18px;
-    margin: auto 20px;
-    font-size: 23px;
+    margin: auto 5px;
+    font-size: 20px;
 }
 
 .header-list li a {
@@ -39,8 +39,106 @@ h1{
     position: relative;
     margin: 5px 0 0 20px;
 }
-.logo-background{
+
+.logo-background {
     position: absolute;
     background-color: rgb(185, 170, 141);
     padding: 10px 5px 15px 5px;
+}
+
+.gallery {
+    width: 880px;
+    margin: 0 auto;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.gallery-inner {
+
+    position: relative;
+}
+
+.gallery-image-container img {
+    position: absolute;
+    object-fit: cover;
+    width: 295px;
+    height: 250px;
+
+}
+
+.gallery-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 295px);
+    grid-template-rows: repeat(3, 250px);
+}
+
+.gallery-inner {
+    position: relative;
+}
+
+.gallery-inner p {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    left: 10px;
+    font-family: "Roboto", sans-serif;
+    visibility: hidden;
+
+}
+.gallery-inner p:hover {
+   cursor: pointer;
+}
+.gallery-image-container :hover {
+    filter: brightness(0.5);
+}
+ .gallery-inner:hover p {
+    transition: ease-in 1.9s;
+    visibility: visible;
+    z-index: 2;
+}
+
+.modal {
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    margin: 100px 0 0 55px;
+    background-color: rgb(81, 80, 80, 0.8);
+    z-index: 10;
+top: 0;
+display: none;
+}
+.modal-content{
+    position :relative;
+}
+.close {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    cursor: pointer;
+}
+.prev, .next{
+    font-size: 20px;
+    position: absolute;
+    top: 250px;
+    background-color: #f5a2d1;
+    border: none;
+    margin: 20px;
+    font-size: 30px;
+}
+.next{
+    right: 0;
 }
