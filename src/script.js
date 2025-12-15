@@ -7,35 +7,34 @@ const newImg = document.querySelector('.new-images');
 
 //click on text to open modal
 openModal.forEach(modalImage => {
-  modalImage.addEventListener('click', () => {
-    imageContainer.classList.add('active');
+    modalImage.addEventListener('click', () => {
+        modal.style.display = 'block';
 
-    modal.style.display = 'block';
-    modalImages();
-  });
+
+        modalImages();
+    });
 });
 
 
 //modal images
 function modalImages() {
-
-  console.log(imageContainer);
-
-  const images = document.querySelectorAll('.active img');
-
-  images.forEach(image => {
-    const imgSrc = image.getAttribute('src');
-    const newImage = document.createElement('img');
-    newImage.setAttribute('src', imgSrc);
-    newImg.appendChild(newImage);
-  });
+   
+    imageContainer.classList.add('active');
+    const images = document.querySelectorAll('.active img');
+    console.log(imageContainer)
+    images.forEach(image => {
+        const imgSrc = image.getAttribute('src');
+        const newImage = document.createElement('img');
+        newImage.setAttribute('src', imgSrc);
+        newImg.appendChild(newImage);
+    });
 
 }
 
 //click on close button to close modal
 const closeModal = document.querySelector('.close');
 closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
+    modal.style.display = 'none';
 });
 //hamburger menu
 
@@ -43,64 +42,66 @@ const menu = document.querySelector('.burger-menu');
 const list = document.querySelector('.header-list');
 const closeButton = document.querySelector('.close-menu')
 menu.addEventListener('click', function openMenu() {
-  console.log('clicked')
+    console.log('clicked')
 
 
-  list.style.display = "block";
-  menu.style.display = "none"
-  closeButton.style.display = "block"
+    list.style.display = "block";
+    menu.style.display = "none"
+    closeButton.style.display = "block"
 })
 closeButton.addEventListener('click', function closeMenu() {
 
-  menu.style.display = "block";
-  closeButton.style.display = "none"
-  list.style.display = "none";
+    menu.style.display = "block";
+    closeButton.style.display = "none"
+    list.style.display = "none";
 })
 
   /* About Us Read More */
+  
+// js/about-toggle.js
 
-  // js/about-toggle.js
-  (function () {
-    function initParagraphToggle({
-      containerSelector = '#aboutContent',
-      buttonSelector = '#aboutToggle',
-      initiallyShowCount = 1        // show first paragraph, reveal the rest on click
-    } = {}) {
-      const container = document.querySelector(containerSelector);
-      const btn = document.querySelector(buttonSelector);
-      if (!container || !btn) return;
+(function () {
+  function initParagraphToggle({
+    containerSelector = '#aboutContent',
+    buttonSelector = '#aboutToggle',
+    initiallyShowCount = 1        // show first paragraph, reveal the rest on click
+  } = {}) {
+    const container = document.querySelector(containerSelector);
+    const btn = document.querySelector(buttonSelector);
+    if (!container || !btn) return;
 
-      const paragraphs = Array.from(container.querySelectorAll('p'));
-      if (paragraphs.length <= initiallyShowCount) {
-        btn.style.display = 'none';
-        return;
-      }
+    const paragraphs = Array.from(container.querySelectorAll('p'));
+    if (paragraphs.length <= initiallyShowCount) {
+      btn.style.display = 'none';
+      return;
+    }
 
-      let expanded = false;
+    let expanded = false;
 
-      function apply() {
-        paragraphs.forEach((p, i) => {
-          p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
-        });
-        btn.textContent = expanded ? 'Show less' : 'Read more';
-        btn.setAttribute('aria-expanded', String(expanded));
-      }
-      apply();
-
-      btn.addEventListener('click', () => {
-        expanded = !expanded;
-        apply();
+    function apply() {
+      paragraphs.forEach((p, i) => {
+        p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
       });
+      btn.textContent = expanded ? 'Show less' : 'Read more';
+      btn.setAttribute('aria-expanded', String(expanded));
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
-    } else {
-      initParagraphToggle();
-    }
+    apply();
 
-    window.initParagraphToggle = initParagraphToggle;
-  })();
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      apply();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
+  } else {
+    initParagraphToggle();
+  }
+
+  window.initParagraphToggle = initParagraphToggle;
+})();
 
 /* Team */
 /* team.js
