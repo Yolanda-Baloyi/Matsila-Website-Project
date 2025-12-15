@@ -1,3 +1,4 @@
+ /* About Us Read More */
 //get elements 
 const openModal = document.querySelectorAll('.gallery-inner')
 const imageContainer = document.querySelector('.gallery-image-container');
@@ -103,7 +104,6 @@ closeButton.addEventListener('click', function closeMenu() {
 })();
 
 /* Team */
-
 /* team.js
    Carousel that shows 3 team members per view on desktop,
    advances by 1 card with left/right arrows, and adapts on smaller screens.
@@ -117,16 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!container || members.length === 0 || !btnPrev || !btnNext) return;
 
-  const total = members.length;      // 13 in your case
+  const total = members.length;      
   const VISIBLE_DESKTOP = 3;
-  const VISIBLE_TABLET = 2;
+  const VISIBLE_TABLET = 3;
   const VISIBLE_MOBILE = 1;
 
   let startIndex = 0;
 
   // Match CSS breakpoints
-  const mqTablet = window.matchMedia('(max-width: 900px)');
-  const mqMobile = window.matchMedia('(max-width: 560px)');
+  const mqTablet = window.matchMedia('(min-width: 769px)');
+  const mqMobile = window.matchMedia('(max-width: 768px)');
 
   function getVisibleCount() {
     if (mqMobile.matches) return VISIBLE_MOBILE;
