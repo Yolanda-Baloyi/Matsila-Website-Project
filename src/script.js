@@ -1,3 +1,4 @@
+ /* About Us Read More */
 //get elements 
 const openModal = document.querySelectorAll('.gallery-inner')
 const imageContainer = document.querySelector('.gallery-image-container');
@@ -6,34 +7,35 @@ const newImg = document.querySelector('.new-images');
 
 //click on text to open modal
 openModal.forEach(modalImage => {
-    modalImage.addEventListener('click', () => {
-        modal.style.display = 'block';
+  modalImage.addEventListener('click', () => {
+    imageContainer.classList.add('active');
 
-
-        modalImages();
-    });
+    modal.style.display = 'block';
+    modalImages();
+  });
 });
 
 
 //modal images
 function modalImages() {
-   
-    imageContainer.classList.add('active');
-    const images = document.querySelectorAll('.active img');
-    console.log(imageContainer)
-    images.forEach(image => {
-        const imgSrc = image.getAttribute('src');
-        const newImage = document.createElement('img');
-        newImage.setAttribute('src', imgSrc);
-        newImg.appendChild(newImage);
-    });
+
+  console.log(imageContainer);
+
+  const images = document.querySelectorAll('.active img');
+
+  images.forEach(image => {
+    const imgSrc = image.getAttribute('src');
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', imgSrc);
+    newImg.appendChild(newImage);
+  });
 
 }
 
 //click on close button to close modal
 const closeModal = document.querySelector('.close');
 closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+  modal.style.display = 'none';
 });
 //hamburger menu
 
@@ -41,69 +43,66 @@ const menu = document.querySelector('.burger-menu');
 const list = document.querySelector('.header-list');
 const closeButton = document.querySelector('.close-menu')
 menu.addEventListener('click', function openMenu() {
-    console.log('clicked')
+  console.log('clicked')
 
 
-    list.style.display = "block";
-    menu.style.display = "none"
-    closeButton.style.display = "block"
+  list.style.display = "block";
+  menu.style.display = "none"
+  closeButton.style.display = "block"
 })
 closeButton.addEventListener('click', function closeMenu() {
 
-    menu.style.display = "block";
-    closeButton.style.display = "none"
-    list.style.display = "none";
+  menu.style.display = "block";
+  closeButton.style.display = "none"
+  list.style.display = "none";
 })
 
   /* About Us Read More */
-  
-// js/about-toggle.js
 
-(function () {
-  function initParagraphToggle({
-    containerSelector = '#aboutContent',
-    buttonSelector = '#aboutToggle',
-    initiallyShowCount = 1        // show first paragraph, reveal the rest on click
-  } = {}) {
-    const container = document.querySelector(containerSelector);
-    const btn = document.querySelector(buttonSelector);
-    if (!container || !btn) return;
+  // js/about-toggle.js
+  (function () {
+    function initParagraphToggle({
+      containerSelector = '#aboutContent',
+      buttonSelector = '#aboutToggle',
+      initiallyShowCount = 1        // show first paragraph, reveal the rest on click
+    } = {}) {
+      const container = document.querySelector(containerSelector);
+      const btn = document.querySelector(buttonSelector);
+      if (!container || !btn) return;
 
-    const paragraphs = Array.from(container.querySelectorAll('p'));
-    if (paragraphs.length <= initiallyShowCount) {
-      btn.style.display = 'none';
-      return;
-    }
+      const paragraphs = Array.from(container.querySelectorAll('p'));
+      if (paragraphs.length <= initiallyShowCount) {
+        btn.style.display = 'none';
+        return;
+      }
 
-    let expanded = false;
+      let expanded = false;
 
-    function apply() {
-      paragraphs.forEach((p, i) => {
-        p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
-      });
-      btn.textContent = expanded ? 'Show less' : 'Read more';
-      btn.setAttribute('aria-expanded', String(expanded));
-    }
-
-    apply();
-
-    btn.addEventListener('click', () => {
-      expanded = !expanded;
+      function apply() {
+        paragraphs.forEach((p, i) => {
+          p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
+        });
+        btn.textContent = expanded ? 'Show less' : 'Read more';
+        btn.setAttribute('aria-expanded', String(expanded));
+      }
       apply();
-    });
-  }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
-  } else {
-    initParagraphToggle();
-  }
+      btn.addEventListener('click', () => {
+        expanded = !expanded;
+        apply();
+      });
+    }
 
-  window.initParagraphToggle = initParagraphToggle;
-})();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
+    } else {
+      initParagraphToggle();
+    }
+
+    window.initParagraphToggle = initParagraphToggle;
+  })();
 
 /* Team */
-
 /* team.js
    Carousel that shows 3 team members per view on desktop,
    advances by 1 card with left/right arrows, and adapts on smaller screens.
@@ -117,16 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!container || members.length === 0 || !btnPrev || !btnNext) return;
 
-  const total = members.length;      // 13 in your case
+  const total = members.length;      
   const VISIBLE_DESKTOP = 3;
-  const VISIBLE_TABLET = 2;
+  const VISIBLE_TABLET = 3;
   const VISIBLE_MOBILE = 1;
 
   let startIndex = 0;
 
   // Match CSS breakpoints
-  const mqTablet = window.matchMedia('(max-width: 900px)');
-  const mqMobile = window.matchMedia('(max-width: 560px)');
+  const mqTablet = window.matchMedia('(min-width: 769px)');
+  const mqMobile = window.matchMedia('(max-width: 768px)');
 
   function getVisibleCount() {
     if (mqMobile.matches) return VISIBLE_MOBILE;

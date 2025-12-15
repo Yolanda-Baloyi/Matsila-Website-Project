@@ -1,3 +1,135 @@
+
+:root{
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #888;
+  --heading: #646464;
+  --line: #e5e5e5;
+
+  --brand: #a1770a;
+  --brand-dark: #a1770a;
+
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 8px;
+
+  /* KEY: narrow content like the screenshot */
+  --content: 56em;          /* ~960px (Alpha-like) */
+  --page-pad: 2rem;
+
+  /* KEY: overlap amount so About sits into hero */
+  --overlap: 110px;
+}
+
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+img{ max-width: 100%; display: block; }
+
+/* ===== Buttons ===== */
+.mf-btn{
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--brand);
+  color: #fff;
+  padding: .85rem 1.6rem;
+  border-radius: 2px;
+  font-weight: 600;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15);
+}
+.mf-btn:hover{ background: #e0b300; }
+.mf-btn:active{ background: var(--brand-dark); }
+.mf-btn--primary{ min-width: 160px; text-align: center; }
+.mf-btn--small{ padding: .65rem 1.2rem; font-weight: 600; }
+
+/* ===== Hero ===== */
+
+.mf-hero{
+  position: relative;
+
+  /* KEY: tall hero */
+  min-height: 72vh;
+  max-height: 820px;
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  /* KEY: reserve space at bottom for the overlap card */
+  padding-bottom: var(--overlap);
+}
+
+.mf-hero__bg{
+  position:absolute; inset:0;
+  background: url("pictures/otherpics/hero200.jpg") center/cover no-repeat;
+  transform: scale(1.03);
+}
+
+.mf-hero__overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35));
+}
+
+.mf-hero__content{
+  position: relative;
+  text-align: center;
+  padding: 0 1rem;
+  color: #fff;
+  max-width: 56rem;
+}
+
+.mf-hero__title{
+  margin: 0 0 .55rem;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: #fff;
+}
+
+.mf-hero__subtitle{
+  margin: 0 0 1.5rem;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: rgba(255,255,255,.92);
+}
+
+/* ===== Main / Overlap layout ===== */
+
+.mf-main{
+  width: min(var(--content), calc(100% - var(--page-pad)));
+  margin: calc(-1 * var(--overlap)) auto 60px; 
+  position: relative;                          
+  z-index: 5;                                  
+}
+
+/* Ensure card stays centered and narrow */
+.mf-card{
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+/* ===== Card ===== */
+.mf-card{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.2rem 2rem;
+}
+.mf-card__header{
+  text-align: center;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--line);
+}
+.mf-card__title{
+  margin: 0;
+  color: var(--heading);
+  font-weight: 300;
 .header {
     background: rgb(219, 211, 211);
     height: 70px;
@@ -62,15 +194,256 @@
     }
 }
 
-.header-list li a {
-    text-decoration: none;
-    color: black;
+/* ===== About ===== */
+.mf-about__content{
+  max-width: 860px;
+  margin: 0 auto;
+}
+.mf-about__content p{
+  margin: 0 0 1.2rem;
+  text-align: justify;
+  color: #666;
+}
+.mf-about__actions{
+  text-align: center;
+  padding-top: .75rem;
 }
 
-.logo-cover {
-    position: relative;
-    margin: 5px 0 0 20px;
+/* ===== Sections ===== */
+.mf-section{
+  margin-top: 40px;
 }
+
+.mf-section__inner{
+  width: min(var(--content), calc(100% - var(--page-pad)));
+  margin: 0 auto;
+}
+
+.mf-section__title{
+  text-align: center;
+  color: var(--heading);
+  font-weight: 300;
+  margin: 0 0 22px;
+}
+
+/* ===== MVV ===== */
+.mf-mvv{
+  padding: 10px 0 0;
+}
+.mf-mvv__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.mf-mvv__item{
+  text-align: center;
+}
+.mf-mvv__icon{
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  position: relative;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+.mf-mvv__icon::before,
+.mf-mvv__icon::after{
+  content:"";
+  position:absolute;
+  border-radius: 50%;
+  inset: 0;
+  border: 1px solid #ededed;
+}
+.mf-mvv__icon::after{
+  inset: 10px;
+  border-color: #f5f5f5;
+}
+.mf-mvv__icon i{
+  font-size: 46px;
+}
+.mf-mvv__icon--red i{ color: #e88a8a; }
+.mf-mvv__icon--purple i{ color: #9c8ad8; }
+.mf-mvv__icon--blue i{ color: #6ab3e8; }
+
+.mf-mvv__title{
+  margin: 0 0 .45rem;
+  color: var(--heading);
+  font-weight: 300;
+}
+.mf-mvv__text{
+  margin: 0 auto;
+  max-width: 320px;
+  color: var(--text);
+}
+
+/* ===========Meet Our Team========= */
+
+.team {
+  padding: 10px 6% 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-top: 40px;
+  
+}
+
+.team h2 {
+  font-size: 2.1rem;
+  margin-bottom: 50px;
+  color: #666;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+ 
+}
+
+/* Each team member box */
+.team-member {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50;
+  width:160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Round image inside box */
+.team-member img {
+  width: 140px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  aspect-ratio: 1 / 1;
+  border: 3px solid #ddd;
+}
+
+/* Text styling */
+.team-member h3 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 3px;
+}
+
+.team-member p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Align arrows and viewport */
+.team-nav {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.team-viewport {
+  overflow: hidden;
+}
+
+.team-arrow:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}
+
+.team-arrow:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Row wrapper */
+.team-row {
+  position: relative;
+  max-width: 1240px;    
+  margin: 0 auto;       
+  padding: 22px 84px;    
+}
+
+/* Vertically center arrows beside the row */
+.team-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  appearance: none;
+  border: none;
+  background: #fff;
+  color: #333;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  cursor: pointer;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.team-arrow.left  { left: -36px; }
+.team-arrow.right { right: -36px; }
+
+.team-arrow:hover {
+  background: #f2f2f2;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.team-arrow:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Viewport masks overflow; will show/hide the 3 items */
+.team-viewport {
+  overflow: hidden;
+}
+
+/* Card consistency */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 150px;
+  padding-top: 20px;
+}
+
+/* Responsive: keep arrows usable while adapting columns */
+@media (max-width: 900px) {
+  .team-row {
+    padding: 20px 70px;
+  }
+  .team-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .team-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .team-row {
+    padding: 16px 62px;
+  }
+  .team-container {
+    grid-template-columns: 1fr;
+  }
 
 @media (max-width:768px) {
     .logo-cover {
