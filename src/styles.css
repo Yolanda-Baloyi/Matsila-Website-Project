@@ -130,6 +130,68 @@ img{ max-width: 100%; display: block; }
   margin: 0;
   color: var(--heading);
   font-weight: 300;
+.header {
+    background: rgb(219, 211, 211);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    position: relative;
+    z-index: 100;
+}
+
+@media (max-width:768px) {
+    .header {
+        height: 50px;
+    }
+}
+
+.header h1 {
+    position: relative;
+    margin: auto;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    left: -35px;
+}
+
+@media (max-width:768px) {
+    .header h1 {
+        font-size: 16px;
+        margin-left: 40px;
+    }
+}
+
+.header-list {
+    display: flex;
+    margin-right: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+@media (max-width:768px) {
+    .header-list {
+        display: none;
+        position: absolute !important;
+        background-color: rgb(219, 211, 211);
+        top: 40px;
+        right: -9px;
+        padding: 0px 20px 10px 22px;
+    }
+}
+
+.header-list li {
+    list-style: none;
+    margin: auto 5px;
+    font-size: 18px;
+}
+
+@media (max-width:768px) {
+    .header-list li {
+        font-size: 14px;
+        margin: 10px 0;
+    }
 }
 
 /* ===== About ===== */
@@ -382,4 +444,197 @@ img{ max-width: 100%; display: block; }
   .team-container {
     grid-template-columns: 1fr;
   }
+
+@media (max-width:768px) {
+    .logo-cover {
+        margin: 5px 0 0 10px;
+    }
+}
+
+.logo-background {
+    position: absolute;
+    background-color: rgb(185, 170, 141);
+    padding: 10px 5px 15px 5px;
+}
+
+@media (max-width:768px) {
+    .logo-background {
+        position: relative;
+        /* background-color: unset; */
+        margin-left: -6px;
+        padding: 5px 5px 10px 5px;
+    }
+}
+
+.logo-background img {
+    width: 70px;
+    height: 70px;
+}
+@media (max-width:768px) {
+.logo-background img {
+    width: 40px;
+    height: 40px;
+}
+}
+.close-menu {
+    display: none;
+    margin: auto;
+}
+
+.burger-menu {
+    display: none;
+    margin: auto;
+}
+
+@media (max-width:768px) {
+    .burger-menu {
+        display: block;
+    }
+}
+
+.donate {
+    background-color: #a1770a;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+/* gallery styles */
+.gallery {
+    width: 880px;
+    margin: 0 auto;
+}
+@media (max-width:768px) {
+    .gallery {
+        width: 100%;
+    }
+}
+.gallery h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+@media (max-width:768px) {
+    .gallery h2 {
+        font-size: 16px;
+    }
+}
+.gallery-inner {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-image-container img {
+    /* position: absolute; */
+    object-fit: cover;
+    width: 295px;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (max-width:768px) {
+    .gallery-image-container img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.gallery-image-container {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 295px);
+    grid-template-rows: repeat(3, 250px);
+}
+
+@media (max-width:768px) {
+    .gallery-images {
+        margin: 0 0 0 30px;
+        grid-template-columns: repeat(2, 160px);
+        grid-template-rows: repeat(3, 160px);
+    }
+}
+
+.gallery-inner p {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    left: 10px;
+    font-family: "Roboto", sans-serif;
+    visibility: hidden;
+
+}
+
+.gallery-inner p:hover {
+    cursor: pointer;
+}
+
+.gallery-image-container :hover {
+    filter: brightness(0.5);
+}
+
+.gallery-inner:hover p {
+    transition: ease-in 1.9s;
+    visibility: visible;
+    z-index: 2;
+}
+
+.modal {
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    margin: 100px 0 0 55px;
+    background-color: rgb(81, 80, 80, 0.8);
+    z-index: 10;
+    top: 0;
+    display: none;
+}
+@media (max-width:768px) {
+    .modal {
+        width: 95%;
+        height: 80%;
+        margin: auto;
+        padding: 0;
+        top: 80px;
+    }
+}
+.modal-content {
+    position: relative;
+}
+
+.close {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    font-size: 20px;
+    position: absolute;
+    top: 250px;
+    background-color: #f5a2d1;
+    border: none;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.next {
+    right: 0;
+}
+
+.new-images {
+    display: flex;
+    width: 400px;
+    margin: 70px auto;
+    overflow: hidden;
 }
