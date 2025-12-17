@@ -1,182 +1,159 @@
-//get elements 
-const openModal = document.querySelectorAll('.gallery-inner')
-const imageContainer = document.querySelector('.gallery-image-container');
+// Get elements
+const galleryItems = document.querySelectorAll('.gallery-inner');
 const modal = document.querySelector('.modal');
-const newImg = document.querySelector('.new-images');
+const modalContent = document.querySelector('.modal-content');
+const closeModal = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const newImgContainer = document.querySelector('.new-images');
 
-//click on text to open modal
-openModal.forEach(modalImage => {
-  modalImage.addEventListener('click', () => {
-    imageContainer.classList.add('active');
+// Variables to track current state
+let currentGalleryIndex = 0;
+let currentImageIndex = 0;
+let allImages = [];
 
-    modal.style.display = 'block';
-    modalImages();
-  });
+// Open modal when clicking on any gallery item
+galleryItems.forEach((galleryItem, index) => {
+    galleryItem.addEventListener('click', () => {
+        currentGalleryIndex = index;
+        loadModalImages();
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
 });
 
-
-//modal images
-function modalImages() {
-
-  console.log(imageContainer);
-
-  const images = document.querySelectorAll('.active img');
-
-  images.forEach(image => {
-    const imgSrc = image.getAttribute('src');
-    const newImage = document.createElement('img');
-    newImage.setAttribute('src', imgSrc);
-    newImg.appendChild(newImage);
-  });
-
+// Load images from clicked gallery into modal
+function loadModalImages() {
+    // Clear previous images
+    newImgContainer.innerHTML = '';
+    allImages = [];
+    
+    // Get all images from the clicked gallery
+    const galleryImages = galleryItems[currentGalleryIndex].querySelectorAll('img');
+    
+    // Create and add images to modal
+    galleryImages.forEach((img, index) => {
+        const imgSrc = img.getAttribute('src');
+        const newImage = document.createElement('img');
+        newImage.setAttribute('src', imgSrc);
+        newImage.style.display = index === 0 ? 'block' : 'none';
+        newImgContainer.appendChild(newImage);
+        allImages.push(newImage);
+    });
+    
+    // Reset to first image
+    currentImageIndex = 0;
+    updateNavButtons();
 }
 
-//click on close button to close modal
-const closeModal = document.querySelector('.close');
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
+// Navigation functions
+function showNextImage() {
+    if (allImages.length === 0) return;
+    
+    allImages[currentImageIndex].style.display = 'none';
+    currentImageIndex = (currentImageIndex + 1) % allImages.length;
+    allImages[currentImageIndex].style.display = 'block';
+    updateNavButtons();
+}
+
+function showPrevImage() {
+    if (allImages.length === 0) return;
+    
+    allImages[currentImageIndex].style.display = 'none';
+    currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+    allImages[currentImageIndex].style.display = 'block';
+    updateNavButtons();
+}
+
+// Update navigation button states
+function updateNavButtons() {
+    // For single image galleries, hide navigation
+    if (allImages.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+    } else {
+        prevBtn.style.display = 'block';
+        nextBtn.style.display = 'block';
+    }
+}
+
+// Close modal
+function closeModalFunc() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+    newImgContainer.innerHTML = ''; // Clear images
+    allImages = [];
+}
+
+// Event listeners for navigation
+nextBtn.addEventListener('click', showNextImage);
+prevBtn.addEventListener('click', showPrevImage);
+closeModal.addEventListener('click', closeModalFunc);
+
+// Close modal when clicking outside the image
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModalFunc();
+    }
 });
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        } else if (e.key === 'Escape') {
+            closeModalFunc();
+        }
+    }
+});
+
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - next image
+            showNextImage();
+        } else {
+            // Swipe right - previous image
+            showPrevImage();
+        }
+    }
+}
 //hamburger menu
 
 const menu = document.querySelector('.burger-menu');
 const list = document.querySelector('.header-list');
 const closeButton = document.querySelector('.close-menu')
 menu.addEventListener('click', function openMenu() {
-  console.log('clicked')
+    console.log('clicked')
 
 
-  list.style.display = "block";
-  menu.style.display = "none"
-  closeButton.style.display = "block"
+    list.style.display = "block";
+    menu.style.display = "none"
+    closeButton.style.display = "block"
 })
 closeButton.addEventListener('click', function closeMenu() {
 
-  menu.style.display = "block";
-  closeButton.style.display = "none"
-  list.style.display = "none";
+    menu.style.display = "block";
+    closeButton.style.display = "none"
+    list.style.display = "none";
 })
 
-  /* About Us Read More */
-
-  // js/about-toggle.js
-  (function () {
-    function initParagraphToggle({
-      containerSelector = '#aboutContent',
-      buttonSelector = '#aboutToggle',
-      initiallyShowCount = 1        // show first paragraph, reveal the rest on click
-    } = {}) {
-      const container = document.querySelector(containerSelector);
-      const btn = document.querySelector(buttonSelector);
-      if (!container || !btn) return;
-
-      const paragraphs = Array.from(container.querySelectorAll('p'));
-      if (paragraphs.length <= initiallyShowCount) {
-        btn.style.display = 'none';
-        return;
-      }
-
-      let expanded = false;
-
-      function apply() {
-        paragraphs.forEach((p, i) => {
-          p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
-        });
-        btn.textContent = expanded ? 'Show less' : 'Read more';
-        btn.setAttribute('aria-expanded', String(expanded));
-      }
-      apply();
-
-      btn.addEventListener('click', () => {
-        expanded = !expanded;
-        apply();
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
-    } else {
-      initParagraphToggle();
-    }
-
-    window.initParagraphToggle = initParagraphToggle;
-  })();
-
-/* Team */
-
-/* team.js
-   Carousel that shows 3 team members per view on desktop,
-   advances by 1 card with left/right arrows, and adapts on smaller screens.
-*/
-
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.team-container');
-  const members = Array.from(container?.querySelectorAll('.team-member') || []);
-  const btnPrev = document.querySelector('.team-arrow.left');
-  const btnNext = document.querySelector('.team-arrow.right');
-
-  if (!container || members.length === 0 || !btnPrev || !btnNext) return;
-
-  const total = members.length;      // 13 in your case
-  const VISIBLE_DESKTOP = 3;
-  const VISIBLE_TABLET = 2;
-  const VISIBLE_MOBILE = 1;
-
-  let startIndex = 0;
-
-  // Match CSS breakpoints
-  const mqTablet = window.matchMedia('(max-width: 900px)');
-  const mqMobile = window.matchMedia('(max-width: 560px)');
-
-  function getVisibleCount() {
-    if (mqMobile.matches) return VISIBLE_MOBILE;
-    if (mqTablet.matches) return VISIBLE_TABLET;
-    return VISIBLE_DESKTOP;
-  }
-
-  function render() {
-    const visible = getVisibleCount();
-
-    // Show only [startIndex, startIndex + visible)
-    members.forEach((el, idx) => {
-      const inRange = idx >= startIndex && idx < startIndex + visible;
-      el.style.display = inRange ? '' : 'none';
-    });
-
-    // Disable arrows at bounds (no wrap)
-    btnPrev.disabled = (startIndex === 0);
-    btnNext.disabled = (startIndex >= total - visible);
-  }
-
-  function goNext() {
-    const visible = getVisibleCount();
-    if (startIndex < total - visible) {
-      startIndex += 1;
-      render();
-    }
-  }
-
-  function goPrev() {
-    if (startIndex > 0) {
-      startIndex -= 1;
-      render();
-    }
-  }
-
-  // Events
-  btnPrev.addEventListener('click', goPrev);
-  btnNext.addEventListener('click', goNext);
-
-  // Keyboard support
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') goPrev();
-    if (e.key === 'ArrowRight') goNext();
-  });
-
-  // Respond to breakpoint changes
-  mqTablet.addEventListener?.('change', render);
-  mqMobile.addEventListener?.('change', render);
-  window.addEventListener('resize', render);
-
-  // Initial paint
-  render();
-});
