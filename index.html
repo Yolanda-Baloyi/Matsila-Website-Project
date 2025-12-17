@@ -13,39 +13,17 @@
         <link rel="stylesheet" href="src/style.css">
 
   <!-- Font (icons for MVV) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/styles.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo-cover">
-            <div class="logo-background">
-                <img src="src/images/logo.png" alt="Logo" width="70" height="70">
-            </div>
-
-        </div>
-
-        <h1>DEMO Youth Development Forum</h1>
-        <ul class="header-list">
-            <li><a href="#AboutUs">About us </a></li>
-            <li><a href="#Gallery">Gallery </a></li>
-            <li><a href="#Team">Team</a></li>
-            <li><a href="#Team"> News</a></li>
-            <li><a href="#ContactUs">Contact us</a></li>
-            <li><a href="" class="donate">Donate </a></li>
-        </ul>
-
-        <div class="close-menu">╳</div>
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50"
-            class="burger-menu">
-            <path
-                d="M 3 8 A 2.0002 2.0002 0 1 0 3 12 L 47 12 A 2.0002 2.0002 0 1 0 47 8 L 3 8 z M 3 23 A 2.0002 2.0002 0 1 0 3 27 L 47 27 A 2.0002 2.0002 0 1 0 47 23 L 3 23 z M 3 38 A 2.0002 2.0002 0 1 0 3 42 L 47 42 A 2.0002 2.0002 0 1 0 47 38 L 3 38 z">
-            </path>
-        </svg>
-    </header>
-  <div class="mf-page">
+  <!-- WRAPPER-->
+  <div class="mf-page mf-scope">
 
     <!-- HERO -->
     <header class="mf-hero" role="banner">
@@ -62,10 +40,11 @@
     <!-- MAIN CONTENT WRAP -->
     <main class="mf-main">
 
-      <!-- ABOUT  -->
+      <!-- ABOUT -->
       <section class="mf-card mf-about">
         <header class="mf-card__header">
-          <h2 class="mf-card__title"> <h1>Matsila Youth Development Forum (MYDF)</h1>
+          
+          <h2 class="mf-card__title"><p>About</p>Matsila Youth Development Forum (MYDF)</h2>
         </header>
 
         <div id="aboutContent" class="mf-about__content">
@@ -83,7 +62,12 @@
         </div>
 
         <div class="mf-about__actions">
-          <button id="aboutToggle" class="mf-btn mf-btn--small" aria-controls="aboutContent" aria-expanded="false">
+          <button
+            id="aboutToggle"
+            class="mf-btn mf-btn--small"
+            aria-controls="aboutContent"
+            aria-expanded="false"
+          >
             Read more
           </button>
         </div>
@@ -93,9 +77,11 @@
       <section class="mf-section mf-mvv" aria-label="Mission Vision Values">
         <div class="mf-section__inner">
           <div class="mf-mvv__grid">
+
             <article class="mf-mvv__item">
-              <div class="mf-mvv__icon mf-mvv__icon--red" aria-hidden="true">
-                <i class="fas fa-code"></i>
+              
+            <div class="mf-mvv__icon mf-mvv__icon--red" aria-hidden="true">
+            <i class="fas fa-bullseye"></i>
               </div>
               <h3 class="mf-mvv__title">Our Mission</h3>
               <p class="mf-mvv__text">
@@ -104,8 +90,8 @@
             </article>
 
             <article class="mf-mvv__item">
-              <div class="mf-mvv__icon mf-mvv__icon--purple" aria-hidden="true">
-                <i class="far fa-file-alt"></i>
+             <div class="mf-mvv__icon mf-mvv__icon--purple" aria-hidden="true">
+            <i class="fas fa-eye"></i>
               </div>
               <h3 class="mf-mvv__title">Our Vision</h3>
               <p class="mf-mvv__text">
@@ -122,410 +108,112 @@
                 Equity, perseverance, community and excellence in everything we do.
               </p>
             </article>
+
           </div>
         </div>
       </section>
 
       <!-- Meet Our Team Section -->
-<section class="team">
-  
-    <div id="page-wrapper">
+      <section class="mf-team">
+        <h2 class="mf-team__title">Meet Our Team</h2>
 
-        <!-- Banner -->
-        <section id="banner">
-            <h2>Welcome to Matsila Foundation</h2>
-            <p>Empowering communities, changing lives.</p>
-            <ul class="actions special">
-                <li><a href="#" class="button primary">Donate Now</a></li>
-            </ul>
-        </section>
+        <div class="mf-team__row">
+          <button class="mf-team__arrow mf-team__arrow--left" aria-label="Previous" title="Previous">&#10094;</button>
 
-        <!-- Main -->
-        <section id="main" class="container">
-            <section class="box special">
-                <header class="major">
-                    <h2>About Matsila Youth Development Forum (MYDF)</h2>
-                    <h4>
+          <div class="mf-team__viewport">
+            <div class="mf-team__container">
 
-                        <div id="aboutContent" class="about-content">
-                            <p>
-                                MYDF seeks to minimize the challenges that the learners of Ridokona Day Care Center,
-                                Matsila Primary and Radzambo Secondary School face and to provide motivation for them to
-                                perform at their best, with the minimal resources available to them. We provide career
-                                guidance, information on alternate funding for further education and we also raise funds
-                                for the different needs the schools have from time to time. We also host an Awards event
-                                for our Top Achievers bi-annual. As members of the MYDF, we fund and raise funds for the
-                                initiatives we would like to implement.
-                            </p>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Ms Matsila A.A.jpeg" alt="Ms Matsila A.A">
+                <h3>Ms Matsila A.A</h3>
+                <p>Chairman</p>
+              </div>
 
-                            <p>
-                                Development in these areas continues to move at a snail pace and this can be attributed
-                                to the lack of capacity in many of the previously deprived communities of South Africa.
-                                Employment opportunities are non-existent and this compels many young people to migrate
-                                to other parts of the country in search of jobs. The consequence of this migration is
-                                the erosion of skills since many of the young people with potential are driven far away
-                                from their communities. Ha Matsila is also not able to attract skilled people as it has
-                                nothing to offer in terms of opportunities. There is therefore no prospect for growth
-                                and development and limited chance of social cohesiveness. One of the legacies inherited
-                                from the apartheid system is the absence of the science, technology and finance subjects
-                                in the local Radzambo Secondary School.
-                            </p>
+              <div class="mf-team__member">
+                <img src="src/pictures/otherpics/Sima picture2.jpg" alt="Mr Nanjee S.W">
+                <h3>Mr Nanjee S.W</h3>
+                <p>Chief Executive Officer</p>
+              </div>
 
-                            <p>
-                                In its entire history the Radzambo Secondary School has never offered these subjects.
-                                Young people with an interest in these subjects are compelled to register in schools
-                                situated in other villages where these subjects are taught. Many are forced to walk
-                                about 15 Kilometers a day to schools that offer science, technology and finance. Mr
-                                Simangele Nanjee, one of the founder members of the MYDF, had to walk about 14
-                                Kilometers to the Ramauba Secondary School at Tshikwarani village in order to do the
-                                science subjects in Grade 12. Many of the young people of Ha Matsila, the girls in
-                                particular, are trapped in this situation of limited career choices. The limitations
-                                have over the years compelled some young people to drop out of school as they became
-                                disillusioned. The lack of development at Ha Matsila and surrounding villages can also
-                                be attributed to the limitation in the number of young people with competency in the
-                                fields of science, technology, engineering and finance.
-                            </p>
-                        </div>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Matsila T.E.jpeg" alt="Mr Matsila T.E">
+                <h3>Mr Matsila T.E</h3>
+                <p>Finance Manager</p>
+              </div>
 
-                    </h4>
-                </header>
-                <!-- Read more / Show less button -->
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mrs Muswubi M.D.jpeg" alt="Mrs Muswubi M.D">
+                <h3>Mrs Muswubi M.D</h3>
+                <p>Project Finance Manager</p>
+              </div>
 
-                <button id="aboutToggle" class="btn-read-toggle" aria-controls="aboutContent" aria-expanded="false">
-                    Read more
-                </button>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Ms Nkuzana S.jpeg" alt="Ms Nkunzana S">
+                <h3>Ms Nkunzana S</h3>
+                <p>Assistant Project Finance Manager</p>
+              </div>
 
-                <script src="js/about-toggle.js" defer></script>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Matsila M.K.jpeg" alt="Mr Matsila M.K">
+                <h3>Mr Matsila M.K</h3>
+                <p>Human Capital Manager</p>
+              </div>
 
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Bhimjee T.G.jpeg" alt="Mr Bhimjee">
+                <h3>Mr Bhimjee</h3>
+                <p>Assistant Human Capital Manager</p>
+              </div>
 
-                <span class="image featured"><img src="src/pictures/otherpics/mission13.jpg" alt="hero" /></span>
-            </section>
-        </section>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Matsila N.S.png" alt="Mr Matsila N.S">
+                <h3>Mr Matsila N.S</h3>
+                <p>Project Manager</p>
+              </div>
 
-        <section class="box special features">
-            <div class="features-row">
-                <section>
-                    <span class="icon solid major fa-bolt accent2"></span>
-                    <h3>Our Mission</h3>
-                    <p>
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Naledzani C.jpeg" alt="Mr Naledzani C">
+                <h3>Mr Naledzani C</h3>
+                <p>Assistant Project Manager</p>
+              </div>
 
-                        To improve the lives of our community through education by:
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Siphugu M.jpeg" alt="Mr Siphugu M">
+                <h3>Mr Siphugu M</h3>
+                <p>Administration Manager</p>
+              </div>
 
-                        Hosting Top Achievers Awards bi-annually
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Ms Mashamba N.I.jpeg" alt="Ms Mashamba N.I">
+                <h3>Ms Mashamba N.I</h3>
+                <p>Assistant Administration Manager</p>
+              </div>
 
-                        Encouraging the students to attend Career expo hosted by Science-Tube
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Magoro H.E.jpeg" alt="Mr Magoro H.E">
+                <h3>Mr Magoro H.E</h3>
+                <p>Communications Manager</p>
+              </div>
 
-                        Hosting motivational talks
+              <div class="mf-team__member">
+                <img src="src/pictures/team/Mr Mashamba H.B.jpeg" alt="Mr Mashamba H.B">
+                <h3>Mr Mashamba H.B</h3>
+                <p>Assistant Communications Manager</p>
+              </div>
 
-                        Mentorship and Coaching
-                    </p>
-                </section>
-                <section>
-                    <span class="icon solid major fa-chart-area accent3"></span>
-                    <h3>Our Vision</h3>
-                    <p>Our vision is to provide an accessible and conducive learning environment that prepares young
-                        people for
-                        careers of their choice.</p>
-                </section>
             </div>
+          </div>
 
-            <section>
-                <span class="icon solid major fa-lock accent5"></span>
-                <h3>Our Values</h3>
-                <p>MYDF is a values-based organisation. Our six values define how we make decisions and treat all our
-                    stakeholders. Our values are, commitment to success
-                    We commit ourselves in ensuring that those that we care for are successful as well. Accountability,
-                    we take
-                    accountability in ensuring that we deliver our commitments. Inspiration, we create an environment
-                    where
-                    learners feel inspired through our achievements. Competence
-                    We build learners' confidence to make them able to do what they believe they cannot do. Empowerment,
-                    We empower the community/learners to make things happen rather than waiting for things to happen.
-                    Ethics and
-                    social responsibility, we demonstrate ethical behavior and social responsibility to ensure it is
-                    imparted to
-                    those we interact with.</p>
-            </section>
-    </div>
-    </section>
-
-    <!-- Meet Our Team Section -->
-    <section class="team">
-        <h2>Meet Our Team</h2>
-
-        <!-- Row wrapper: arrows + viewport + container -->
-        <div class="team-row">
-            <!-- Left arrow -->
-            <button class="team-arrow left" aria-label="Previous" title="Previous">&#10094;</button>
-
-            <!-- Viewport masks overflow -->
-            <div class="team-viewport">
-                <!-- The container with all team members MUST be inside the viewport -->
-                <div class="team-container">
-
-                    <div class="team-member">
-                        <img src="src/pictures/team/Ms Matsila A.A.jpeg" alt="Ms Matsila A.A">
-                        <h3>Ms Matsila A.A</h3>
-                        <p>Chairman</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/otherpics/Sima picture2.jpg" alt="Mr Nanjee S.W">
-                        <h3>Mr Nanjee S.W</h3>
-                        <p>Chief Executive Officer</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Matsila T.E.jpeg" alt="Mr Matsila T.E">
-                        <h3>Mr Matsila T.E</h3>
-                        <p>Finance Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mrs Muswubi M.D.jpeg" alt="Mrs Muswubi M.D">
-                        <h3>Mrs Muswubi M.D</h3>
-                        <p>Project Finance Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Ms Nkuzana S.jpeg" alt="Ms Nkunzana S">
-                        <h3>Ms Nkunzana S</h3>
-                        <p>Assistant Project Finance Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Matsila M.K.jpeg" alt="Mr Matsila M.K">
-                        <h3>Mr Matsila M.K</h3>
-                        <p>Human Capital Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Bhimjee T.G.jpeg" alt="Mr Bhimjee">
-                        <h3>Mr Bhimjee</h3>
-                        <p>Assistant Human Capital Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Matsila N.S.png" alt="Mr Matsila N.S">
-                        <h3>Mr Matsila N.S</h3>
-                        <p>Project Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Naledzani C.jpeg" alt="Mr Naledzani C">
-                        <h3>Mr Naledzani C</h3>
-                        <p>Assistant Project Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Siphugu M.jpeg" alt="Mr Siphugu M">
-                        <h3>Mr Siphugu M</h3>
-                        <p>Administration Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Ms Mashamba N.I.jpeg" alt="Ms Mashamba N.I">
-                        <h3>Ms Mashamba N.I</h3>
-                        <p>Assistant Administration Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Magoro H.E.jpeg" alt="Mr Magoro H.E">
-                        <h3>Mr Magoro H.E</h3>
-                        <p>Communications Manager</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="src/pictures/team/Mr Mashamba H.B.jpeg" alt="Mr Mashamba H.B">
-                        <h3>Mr Mashamba H.B</h3>
-                        <p>Assistant Communications Manager</p>
-                    </div>
-
-                </div><!-- /.team-container -->
-            </div><!-- /.team-viewport -->
-
-            <!-- Right arrow -->
-            <button class="team-arrow right" aria-label="Next" title="Next">&#10095;</button>
-        </div><!-- /.team-row -->
-    </section>
-    <section class="gallery">
-        <h2> Gallery</h2>
-
-        <div class="gallery-images">
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Achivers2013/2013Achivers1.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers2.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers3.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers4.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers5.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers6.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers7.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers8.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers9.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers10.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers11.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers12.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers13.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers14.jpg" alt="">
-                    <img src="src/images/Achivers2013/2013Achivers15.jpg" alt="">
-                </div>
-                <p>Top Achievers Awards 2013 Mid Year and Final </p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Matsila Primary School/Matsila1.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila2.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila3.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila4.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila5.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila6.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila7.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila8.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila9.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila10.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila11.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila12.jpg" alt="">
-                    <img src="src/images/Matsila Primary School/Matsila13.jpg" alt="">
-                </div>
-
-
-                <p>Matsila Primary School</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Radzambo Secondary School/Radzambo1.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo2.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo3" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo4.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo5.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo6.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo7.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo8.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo9.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo10.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo12.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo13.jpg" alt="">
-                    <img src="src/images/Radzambo Secondary School/Radzambo14.jpg" alt="">
-
-                </div>
-
-
-                <p> Radzambo Secondary School</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/DayCare/DayCare1.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare2.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare3.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare4.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare5.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare6.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare7.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare8.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare9.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare10.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare12.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare13.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare14.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare15.jpg" alt="">
-                    <img src="src/images/DayCare/DayCare16.jpg" alt="">
-                </div>
-
-
-                <p>Ridokona Day Care Center</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/MatricDance/MatricDance1.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance2.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance3.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance4.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance5.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance6.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance7.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance8.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance9.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance10.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance11.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance12.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance13.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance14.jpg" alt="">
-                    <img src="src/images/MatricDance/MatricDance15.jpg" alt="">
-                </div>
-
-                <p>Matric Dance 2013</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay1.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay2.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay3.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay4.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay5.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay6.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay7.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay8.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay9.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay10.jpg" alt="">
-                    <img src="src/images/Nelson Mandela Day 2014/MandelaDay11.jpg" alt="">
-                </div>
-                <p>Nelson Mandela Day 2014</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/MYDF Outreach 2014/Outreach1.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach2.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach3.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach4.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach5.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach6.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach7.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach8.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach9.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach10.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach11.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach12.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach13.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach14.jpg" alt="">
-                    <img src="src/images/MYDF Outreach 2014/Outreach15.jpg" alt="">
-                </div>
-
-
-                <p>MYDF Outreach 2014</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver1.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver2.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver3.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver4.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver5.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver6.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver7.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver8.jpg" alt="">
-                    <img src="src/images/Top Achievers Awards 2014 Mid Year/achiver9.jpg" alt="">
-                </div>
-                <p>Top Achievers Awards 2014 Mid Year</p>
-            </div>
-            <div class="gallery-inner">
-                <div class="gallery-image-container">
-                    <img src="src/images/Sanitation for All 2014/sanitation1.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation2.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation3.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation4.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation5.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation6.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation7.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation8.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation9.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation10.jpg" alt="">
-                    <img src="src/images/Sanitation for All 2014/sanitation11.jpg" alt="">
-                </div>
-
-                <p>Sanitation for All 2014</p>
-            </div>
+          <button class="mf-team__arrow mf-team__arrow--right" aria-label="Next" title="Next">&#10095;</button>
         </div>
+      </section>
 
-    </section>
-    <div class="modal">
-        <div class="modal-content">
+    </main>
+  </div>
 
-            <span class="close">×</span>
-            <button class="prev">❮</button>
-            <button class="next">❯</button>
-            <div class="new-images"></div>
-        </div>
-    </div>
-    <script src="src/script.js"></script>
+  <!-- JS -->
+  <script src="js/about-toggle.js" defer></script>
+  <script src="src/script.js" defer></script>
 </body>
 
 </html>
