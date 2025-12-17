@@ -17,32 +17,48 @@
       return;
     }
 
-    let expanded = false;
+  // js/about-toggle.js
+  (function () {
+    function initParagraphToggle({
+      containerSelector = '#aboutContent',
+      buttonSelector = '#aboutToggle',
+      initiallyShowCount = 1        // show first paragraph, reveal the rest on click
+    } = {}) {
+      const container = document.querySelector(containerSelector);
+      const btn = document.querySelector(buttonSelector);
+      if (!container || !btn) return;
 
-    function apply() {
-      paragraphs.forEach((p, i) => {
-        p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
+      const paragraphs = Array.from(container.querySelectorAll('p'));
+      if (paragraphs.length <= initiallyShowCount) {
+        btn.style.display = 'none';
+        return;
+      }
+
+      let expanded = false;
+
+      function apply() {
+        paragraphs.forEach((p, i) => {
+          p.style.display = (!expanded && i >= initiallyShowCount) ? 'none' : '';
+        });
+        btn.textContent = expanded ? 'Show less' : 'Read more';
+        btn.setAttribute('aria-expanded', String(expanded));
+      }
+      apply();
+
+      btn.addEventListener('click', () => {
+        expanded = !expanded;
+        apply();
       });
-      btn.textContent = expanded ? 'Show less' : 'Read more';
-      btn.setAttribute('aria-expanded', String(expanded));
     }
 
-    apply();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
+    } else {
+      initParagraphToggle();
+    }
 
-    btn.addEventListener('click', () => {
-      expanded = !expanded;
-      apply();
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => initParagraphToggle());
-  } else {
-    initParagraphToggle();
-  }
-
-  window.initParagraphToggle = initParagraphToggle;
-})();
+    window.initParagraphToggle = initParagraphToggle;
+  })();
 
 
 /* Team carousel  */
