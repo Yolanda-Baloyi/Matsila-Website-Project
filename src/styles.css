@@ -1,560 +1,998 @@
 
-.mf-scope{
-  --bg: #f5f5f5;
-  --card: #ffffff;
-  --text: #888;
-  --heading: #646464;
-  --line: #e5e5e5;
+  * {
+      scroll-margin-top: 70px;
+      scroll-behavior: smooth;
+  }
 
-  --brand: #a1770a;
-  --brand-dark: #a1770a;
+ 
 
-  --shadow: 0 10px 30px rgba(0,0,0,.08);
-  --radius: 8px;
+      ul {
+          list-style: none;
+      }
 
-  --content: 56em;      
-  --page-pad: 2rem;
-  --overlap: 110px;
 
-  /* scoped page defaults */
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Source Sans Pro", sans-serif;
-  line-height: 1.65;
-}
 
-/* Only images inside my page wrapper */
-.mf-scope img{
-  max-width: 100%;
-  display: block;
-}
+      table {
+          border-collapse: collapse;
+          border-spacing: 0;
+      }
 
-/* ===== Buttons ===== */
-.mf-scope .mf-btn{
-  display: inline-block;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
-  background: var(--brand);
-  color: #fff;
-  padding: .85rem 1.6rem;
-  border-radius: 2px;
-  font-weight: 600;
-  box-shadow: 0 2px 0 rgba(0,0,0,.15);
-}
-.mf-scope .mf-btn:hover{ background: #e0b300; }
-.mf-scope .mf-btn:active{ background: var(--brand-dark); }
-.mf-scope .mf-btn--primary{ min-width: 160px; text-align: center; }
-.mf-scope .mf-btn--small{ padding: .65rem 1.2rem; font-weight: 600; }
+      body {
+          -webkit-text-size-adjust: none;
+      }
 
-/* ===== Hero ===== */
-.mf-scope .mf-hero{
-  position: relative;
-  min-height: 72vh;
-  max-height: 820px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  padding-bottom: var(--overlap);
-}
+      body {
+          font-family: "Roboto", sans-serif;
 
-.mf-scope .mf-hero__bg{
-  position: absolute;
-  inset: 0;
-  background: url("pictures/otherpics/hero200.jpg") center/cover no-repeat;
-  transform: scale(1.03);
-}
+      }
 
-.mf-scope .mf-hero__overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35));
-}
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          color: #333;
+      }
 
-.mf-scope .mf-hero__content{
-  position: relative;
-  text-align: center;
-  padding: 0 1rem;
-  color: #fff;
-  max-width: 56rem;
-}
+      .mf-scope {
+          --bg: #f5f5f5;
+          --card: #ffffff;
+          --line: #e5e5e5;
 
-.mf-scope .mf-hero__title{
-  margin: 0 0 .55rem;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 300;
-  color: #fff;
-}
+          --brand: #a1770a;
+          --brand-dark: #a1770a;
 
-.mf-scope .mf-hero__subtitle{
-  margin: 0 0 1.5rem;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  color: rgba(255,255,255,.92);
-}
+          --shadow: 0 10px 30px rgba(0, 0, 0, .08);
+          --radius: 8px;
 
-/* ===== Main / Overlap layout ===== */
-.mf-scope .mf-main{
-  width: min(var(--content), calc(100% - var(--page-pad)));
-  margin: calc(-1 * var(--overlap)) auto 60px;
-  position: relative;
-  z-index: 5;
-}
+          --content: 56em;
+          --page-pad: 2rem;
+          --overlap: 110px;
 
-/* ===== Card ===== */
-.mf-scope .mf-card{
-  max-width: var(--content);
-  margin: 0 auto;
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.2rem 2rem;
-}
+          /* scoped page defaults */
+          min-height: 100vh;
+          background: var(--bg);
+          line-height: 1.65;
+      }
 
-.mf-scope .mf-card__header{
-  text-align: center;
-  padding-bottom: 1.2rem;
-  margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--line);
-}
+      .header {
+          background: rgb(219, 211, 211);
+          height: 70px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          position: fixed;
+          top: 0;
+          position: sticky;
+          z-index: 100;
+      }
 
-.mf-scope .mf-card__title{
-  margin: 0;
-  color: var(--heading);
-  font-weight: 300;
-}
+      @media (max-width:768px) {
+          .header {
+              height: 50px;
+          }
+      }
 
-/* ===== About ===== */
-.mf-scope .mf-about__content{
-  max-width: 860px;
-  margin: 0 auto;
-}
+      .header h1 {
+          position: relative;
+          margin: auto;
+          font-size: 20px;
+          font-family: "Roboto", sans-serif;
+          font-weight: 600;
+          left: -120px;
+      }
 
-.mf-scope .mf-about__content p{
-  margin: 0 0 1.2rem;
-  text-align: justify;
-  color: #666;
-}
+      @media (min-width:769px) and (max-width:1024px) {
+          .header h1 {
+              font-size: 18px;
+              left: -130px;
+          }
+      }
 
-.mf-scope .mf-about__actions{
-  text-align: center;
-  padding-top: .75rem;
-}
+      @media (max-width:768px) {
+          .header h1 {
+              font-size: 16px;
+              left: 5px;
+          }
+      }
 
-/* Title in the About card header ONLY */
-.mf-scope .mf-about .mf-card__title{
-  font-size: clamp(1.35rem, 1.4vw, 1.75rem);
-  font-weight: 700;
-  color: var(--heading);
-  line-height: 1.15;
-  letter-spacing: 0.2px;
-  margin: 0;
-}
+      .header-list {
+          display: flex;
+          margin-right: 10px;
+          font-family: "Roboto", sans-serif;
+      }
 
-/* Header styling ONLY inside About */
-.mf-scope .mf-about .mf-card__header{
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.35rem;
-  border-bottom: 1px solid var(--line);
-}
+      @media (max-width:768px) {
+          .header-list {
+              display: none;
+              position: absolute !important;
+              background-color: rgb(219, 211, 211);
+              top: 40px;
+              right: -9px;
+              padding: 0px 20px 10px 22px;
+          }
+      }
 
-/* Constrain reading width ONLY in About */
-.mf-scope .mf-about .mf-about__content{
-  max-width: 70ch;
-  margin: 0 auto;
-}
+      @media (min-width:769px) and (max-width:1024px) {
+          .header-list {
+              display: none;
+              margin-right: 5px;
+              position: absolute !important;
+              background-color: rgb(219, 211, 211);
+              top: 60px;
+              right: -9px;
+              padding: 0px 20px 10px 22px;
+          }
+      }
 
-/* Paragraph typography ONLY in About */
-.mf-scope .mf-about .mf-about__content p{
-  font-size: clamp(1rem, 0.95vw, 1.1rem);
-  font-weight: 300;
-  color: #5f5f5f;
-  line-height: 1.8;
-  margin: 0 0 1.25rem;
-}
+      .header-list li {
+          list-style: none;
+          margin: auto 5px;
+          font-size: 18px;
+      }
 
-.mf-scope .mf-about .mf-about__content p:last-child{
-  margin-bottom: 0;  margin-bottom: 0;
-}
-/* ===== Sections ===== */
-.mf-scope .mf-section{
-  margin-top: 40px;
-}
+      @media (min-width:769px) and (max-width:1024px) {
+          .header-list li {
+              font-size: 16px;
+              padding: 10px;
+          }
+      }
 
-.mf-scope .mf-section__inner{
-  width: min(var(--content), calc(100% - var(--page-pad)));
-  margin: 0 auto;
-}
+      @media (max-width:768px) {
+          .header-list li {
+              font-size: 14px;
+              margin: 10px 0;
+          }
+      }
 
-.mf-scope .mf-section__title{
-  text-align: center;
-  color: var(--heading);
-  font-weight: 300;
-  margin: 0 0 22px;
-}
+      .header-list li a {
+          text-decoration: none;
+          color: black;
+      }
 
-/* ===== MVV ===== */
-.mf-scope .mf-mvv{
-  padding: 10px 0 0;
-}
+      .logo-cover {
+          position: relative;
+          margin: 5px 0 0 20px;
+      }
 
-.mf-scope .mf-mvv__grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  align-items: start;
-}
+      @media (max-width:768px) {
+          .logo-cover {
+              margin: 5px 0 0 10px;
+          }
+      }
 
-.mf-scope .mf-mvv__item{
-  text-align: center;
-}
+      .logo-background {
+          position: absolute;
+          background-color: rgb(185, 170, 141);
+          padding: 10px 5px 15px 5px;
+      }
 
-.mf-scope .mf-mvv__icon{
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  position: relative;
-  background: #fff;
-  display: grid;
-  place-items: center; 
+      @media (max-width:768px) {
+          .logo-background {
+              position: relative;
+              /* background-color: unset; */
+              margin-left: -6px;
+              padding: 5px 5px 10px 5px;
+          }
+      }
 
-}
+      .logo-background img {
+          width: 70px;
+          height: 70px;
+      }
 
-.mf-scope .mf-mvv__icon::before,
-.mf-scope .mf-mvv__icon::after{
-  content:"";
-  position: absolute;
-  border-radius: 50%;
-  inset: 0;
-  border: 1px solid #ededed;
-}
+      @media (max-width:768px) {
+          .logo-background img {
+              width: 40px;
+              height: 40px;
+          }
+      }
 
-.mf-scope .mf-mvv__icon::after{
-  inset: 10px;
-  border-color: #f5f5f5;
-}
+      .close-menu {
+          display: none;
+          margin: auto;
+      }
 
-.mf-scope .mf-mvv__icon i{
-  font-size: 46px;
-}
+      @media (min-width:769px) and (max-width:1024px) {
+          .close-menu {
+              margin: 20px;
+          }
+      }
 
-.mf-scope .mf-mvv__icon--red i{ color: #e88a8a; }
-.mf-scope .mf-mvv__icon--purple i{ color: #9c8ad8; }
-.mf-scope .mf-mvv__icon--blue i{ color: #6ab3e8; }
+      .burger-menu {
+          display: none;
+          margin: auto 20px;
+      }
 
-.mf-scope .mf-mvv__title{
-  margin: 0 0 .45rem;
-  color: var(--heading);
-  font-weight: 300;
-}
+      @media (max-width:768px) {
+          .burger-menu {
+              display: block;
+          }
+      }
 
-.mf-scope .mf-mvv__text{
-  margin: 0 auto;
-  max-width: 320px;
-  color: var(--text);
-}
+      @media (min-width:769px) and (max-width:1024px) {
+          .burger-menu {
+              display: block;
+              margin: auto 20px;
+          }
+      }
 
-/* ===== MVV Typography Upgrade===== */
-.mf-scope .mf-mvv__title{
-  
-  font-size: clamp(1.15rem, 1.1vw, 1.4rem);
-  font-weight: 600;                 
-  color: var(--heading);
-  letter-spacing: 0.2px;
-  line-height: 1.2;
-  margin: 0.25rem 0 0.65rem;
-}
+      .donate {
+          background-color: #a1770a;
+          padding: 10px;
+          border-radius: 4px;
+          color: white;
+      }
 
-.mf-scope .mf-mvv__text{
-  
-  font-size: clamp(0.95rem, 0.9vw, 1.05rem);
-  font-weight: 300;                 
-  color: #777;                     
-  line-height: 1.65;
-  margin: 0 auto;
-  max-width: 34ch;                 
-}
+      /* Only images inside my page wrapper */
+      .mf-scope img {
+          max-width: 100%;
+          display: block;
+      }
 
-/* for a polished card-like feel */
-.mf-scope .mf-mvv__item{
-  padding: 0.25rem 0.25rem 0.5rem;
-}
+      /* ===== Buttons ===== */
+      .mf-scope .mf-btn {
+          display: inline-block;
+          border: 0;
+          cursor: pointer;
+          text-decoration: none;
+          background: var(--brand);
+          color: #fff;
+          padding: .85rem 1.6rem;
+          border-radius: 2px;
+          font-weight: 600;
+          box-shadow: 0 2px 0 rgba(0, 0, 0, .15);
+      }
 
-/* =========================================================
+      .mf-scope .mf-btn:hover {
+          background: #e0b300;
+      }
+
+      .mf-scope .mf-btn:active {
+          background: var(--brand-dark);
+      }
+
+      .mf-scope .mf-btn--primary {
+          min-width: 160px;
+          text-align: center;
+      }
+
+      .mf-scope .mf-btn--small {
+          padding: .65rem 1.2rem;
+          font-weight: 600;
+      }
+
+      /* ===== Hero ===== */
+      .mf-scope .mf-hero {
+          position: relative;
+          min-height: 72vh;
+          max-height: 820px;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+          padding-bottom: var(--overlap);
+      }
+
+      .mf-scope .mf-hero__bg {
+          position: absolute;
+          inset: 0;
+          background: url("pictures/otherpics/hero200.jpg") center/cover no-repeat;
+          transform: scale(1.03);
+      }
+
+      .mf-scope .mf-hero__overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .35));
+      }
+
+      .mf-scope .mf-hero__content {
+          position: relative;
+          text-align: center;
+          padding: 0 1rem;
+          color: #fff;
+          max-width: 56rem;
+      }
+
+      .mf-scope .mf-hero__title {
+          margin: 0 0 .55rem;
+          font-size: clamp(2.2rem, 4vw, 3.2rem);
+          font-weight: 300;
+          color: #fff;
+      }
+
+      .mf-scope .mf-hero__subtitle {
+          margin: 0 0 1.5rem;
+          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          color: rgba(255, 255, 255, .92);
+      }
+
+      /* ===== Main / Overlap layout ===== */
+      .mf-scope .mf-main {
+          width: min(var(--content), calc(100% - var(--page-pad)));
+          margin: calc(-1 * var(--overlap)) auto 60px;
+          position: relative;
+          z-index: 5;
+      }
+
+      /* ===== Card ===== */
+      .mf-scope .mf-card {
+          max-width: var(--content);
+          margin: 0 auto;
+          background: var(--card);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          padding: 2.2rem 2rem;
+      }
+
+      .mf-scope .mf-card__header {
+          text-align: center;
+          padding-bottom: 1.2rem;
+          margin-bottom: 1.2rem;
+          border-bottom: 2px solid var(--line);
+      }
+
+      .mf-scope .mf-card__title {
+          margin: 0;
+          font-weight: 300;
+      }
+
+      /* ===== About ===== */
+      .mf-scope .mf-about__content {
+          max-width: 860px;
+          margin: 0 auto;
+      }
+
+      .mf-scope .mf-about__content p {
+          margin: 0 0 1.2rem;
+          text-align: justify;
+      }
+
+      .mf-scope .mf-about__actions {
+          text-align: center;
+          padding-top: .75rem;
+      }
+
+      /* Title in the About card header ONLY */
+      .mf-scope .mf-about .mf-card__title {
+          font-size: clamp(1.35rem, 1.4vw, 1.75rem);
+          font-weight: 600;
+          line-height: 1.15;
+          letter-spacing: 0.2px;
+          margin: 0;
+          font-size: 18px;
+      }
+
+      /* Header styling ONLY inside About */
+      .mf-scope .mf-about .mf-card__header {
+          padding-bottom: 1.25rem;
+          margin-bottom: 1.35rem;
+          border-bottom: 1px solid var(--line);
+      }
+
+      /* Constrain reading width ONLY in About */
+      .mf-scope .mf-about .mf-about__content {
+          max-width: 70ch;
+          margin: 0 auto;
+      }
+
+      /* Paragraph typography ONLY in About */
+      .mf-scope .mf-about .mf-about__content p {
+          font-size: clamp(1rem, 0.95vw, 1.1rem);
+          font-weight: 300;
+          line-height: 1.8;
+          margin: 0 0 1.25rem;
+      }
+
+      .mf-scope .mf-about .mf-about__content p:last-child {
+          margin-bottom: 0;
+          margin-bottom: 0;
+      }
+
+      /* ===== Sections ===== */
+      .mf-scope .mf-section {
+          margin-top: 40px;
+      }
+
+      .mf-scope .mf-section__inner {
+          width: min(var(--content), calc(100% - var(--page-pad)));
+          margin: 0 auto;
+      }
+
+      .mf-scope .mf-section__title {
+          text-align: center;
+          font-weight: 300;
+          margin: 0 0 22px;
+      }
+
+      /* ===== MVV ===== */
+      .mf-scope .mf-mvv {
+          padding: 10px 0 0;
+      }
+
+      .mf-scope .mf-mvv__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
+          align-items: start;
+      }
+
+      @media (max-width:768px) {
+          .mf-scope .mf-mvv__grid {
+              grid-template-columns: 1fr;
+              gap: 2.5rem;
+          }
+      }
+
+      .mf-scope .mf-mvv__item {
+          text-align: center;
+      }
+
+      .mf-scope .mf-mvv__icon {
+          width: 140px;
+          height: 140px;
+          margin: 0 auto 1rem;
+          border-radius: 50%;
+          position: relative;
+          background: #fff;
+          display: grid;
+          place-items: center;
+
+      }
+
+      .mf-scope .mf-mvv__icon::before,
+      .mf-scope .mf-mvv__icon::after {
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+          inset: 0;
+          border: 1px solid #ededed;
+      }
+
+      .mf-scope .mf-mvv__icon::after {
+          inset: 10px;
+          border-color: #f5f5f5;
+      }
+
+      .mf-scope .mf-mvv__icon i {
+          font-size: 46px;
+      }
+
+      .mf-scope .mf-mvv__icon--red i {
+          color: #e88a8a;
+      }
+
+      .mf-scope .mf-mvv__icon--purple i {
+          color: #9c8ad8;
+      }
+
+      .mf-scope .mf-mvv__icon--blue i {
+          color: #6ab3e8;
+      }
+
+      .mf-scope .mf-mvv__title {
+          margin: 0 0 .45rem;
+      }
+
+      .mf-scope .mf-mvv__text {
+          margin: 0 auto;
+          max-width: 320px;
+      }
+
+      /* ===== MVV Typography Upgrade===== */
+      .mf-scope .mf-mvv__title {
+
+          font-size: clamp(1.15rem, 1.1vw, 1.4rem);
+          font-weight: 600;
+          letter-spacing: 0.2px;
+          line-height: 1.2;
+          margin: 0.25rem 0 0.65rem;
+      }
+
+      .mf-scope .mf-mvv__text {
+
+          font-size: clamp(0.95rem, 0.9vw, 1.05rem);
+          font-weight: 300;
+          line-height: 1.65;
+          margin: 0 auto;
+          max-width: 34ch;
+      }
+
+      /* for a polished card-like feel */
+      .mf-scope .mf-mvv__item {
+          padding: 0.25rem 0.25rem 0.5rem;
+      }
+
+      /* gallery styles */
+      .gallery {
+          width: 880px;
+          margin: 0 auto;
+      }
+
+      @media (max-width:768px) {
+          .gallery {
+              width: 100%;
+          }
+      }
+
+      @media (min-width:769px) and (max-width:1024px) {
+          .gallery {
+              width: 800px;
+          }
+      }
+
+      .gallery h2 {
+          text-align: center;
+          font-size: 20px;
+          font-family: "Roboto", sans-serif;
+          font-weight: 600;
+      }
+
+      @media (max-width:768px) {
+          .gallery h2 {
+              font-size: 16px;
+          }
+      }
+
+      .gallery-inner {
+          position: relative;
+          overflow: hidden;
+      }
+
+      .gallery-image-container img {
+          /* position: absolute; */
+          object-fit: cover;
+          width: 295px;
+          height: 250px;
+          object-fit: cover;
+      }
+
+      @media (max-width:768px) {
+          .gallery-image-container img {
+              width: 180px;
+              height: 180px;
+          }
+      }
+
+      @media (min-width:769px) and (max-width:1024px) {
+          .gallery-image-container img {
+              width: 250px;
+              height: 220px;
+          }
+      }
+
+      .gallery-image-container {
+          display: flex;
+          transform: translateX(0);
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .gallery-images {
+          display: grid;
+          grid-template-columns: repeat(3, 295px);
+          grid-template-rows: repeat(3, 250px);
+      }
+
+      @media (min-width:769px) and (max-width:1024px) {
+          .gallery-images {
+              grid-template-columns: repeat(3, 250px);
+              grid-template-rows: repeat(3, 220px);
+              margin: 0 25px;
+          }
+      }
+
+      @media (max-width:768px) {
+          .gallery-images {
+              margin: 0 0 0 10px;
+              grid-template-columns: repeat(2, 160px);
+              grid-template-rows: repeat(3, 160px);
+          }
+      }
+
+      .gallery-inner p {
+          position: absolute;
+          bottom: 10px;
+          color: white;
+          left: 10px;
+          font-family: "Roboto", sans-serif;
+          visibility: hidden;
+
+      }
+
+      .gallery-inner p:hover {
+          cursor: pointer;
+      }
+
+      .gallery-image-container :hover {
+          filter: brightness(0.5);
+      }
+
+      .gallery-inner:hover p {
+          transition: ease-in 1.9s;
+          visibility: visible;
+          z-index: 2;
+      }
+
+      .modal {
+          position: fixed;
+          width: 900px;
+          height: 600px;
+          margin: 120px 0 0 185px;
+          background-color: rgb(81, 80, 80, 0.88);
+          z-index: 10;
+          top: 0;
+          display: none;
+      }
+
+      @media (min-width:769px) and (max-width:1024px) {
+          .modal {
+              width: 770px;
+              height: 500px;
+              margin: 100px 0px 0px 48px;
+              padding: 0;
+              top: 50px;
+          }
+      }
+
+      @media (max-width:768px) {
+          .modal {
+              width: 350px;
+              height: auto;
+              margin: 100px 20px 20px 15px;
+              padding: 0;
+              top: 80px;
+          }
+      }
+
+      .modal-content {
+          position: relative;
+          width: 100%;
+      }
+
+      .close {
+          color: white;
+          font-size: 40px;
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          padding: 20px;
+          cursor: pointer;
+      }
+
+      .prev,
+      .next {
+          font-size: 20px;
+          position: absolute;
+          top: 250px;
+          background-color: #f5a2d1;
+          border: none;
+          margin: 20px;
+          font-size: 30px;
+      }
+
+      @media (max-width:768px) {
+
+          .prev,
+          .next {
+              top: 130px;
+          }
+      }
+
+      .next {
+          right: 0;
+      }
+
+      .new-images {
+          display: flex;
+          width: 400px;
+          margin: 70px auto;
+          overflow: hidden;
+      }
+
+      @media (max-width:768px) {
+          .new-images {
+              width: 180px;
+              height: 180px;
+              margin: 0px auto 40px;
+          }
+      }
+
+      /* =========================================================
    MEET OUR TEAM (renamed classes to avoid collisions)
    ========================================================= */
 
-.mf-scope .mf-team{
-  padding: 100px 10%;
-  text-align: center;
-  background-color: #f9f9f9;
-  margin-top: 40px;
-}
+      .mf-scope .mf-team {
+          padding: 100px 10%;
+          text-align: center;
+          background-color: #f9f9f9;
+          margin-top: 40px;
+      }
 
-.mf-scope .mf-team__title{
-  font-size: 2.1rem;
-  margin-bottom: 50px;
-  color: #666;
-}
+      .mf-scope .mf-team__title {
+          font-size: 2.1rem;
+          margin-bottom: 50px;
+      }
 
-/* Row wrapper */
-.mf-scope .mf-team__row{
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 22px 84px;
-}
+      /* Row wrapper */
+      .mf-scope .mf-team__row {
+          position: relative;
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 22px 84px;
+      }
 
-/* Viewport */
-.mf-scope .mf-team__viewport{
-  overflow: hidden;
-}
+      /* Viewport */
+      .mf-scope .mf-team__viewport {
+          overflow: hidden;
+      }
 
-/* Container (flex row) */
-.mf-scope .mf-team__container{
-  display: flex;
-  justify-content: space-around;
-  gap: 16px;
-  margin-bottom: 30px;
-}
+      /* Container (flex row) */
+      .mf-scope .mf-team__container {
+          display: flex;
+          justify-content: space-around;
+          gap: 16px;
+          margin-bottom: 30px;
+      }
 
-/* Card */
-.mf-scope .mf-team__member{
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 20px;              
-  width: 160px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* Card */
+      .mf-scope .mf-team__member {
+          background-color: #fff;
+          border-radius: 20px;
+          padding: 20px;
+          width: 160px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          min-height: 150px;
+      }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 150px;
-}
+      .mf-scope .mf-team__member:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
 
-.mf-scope .mf-team__member:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+      .mf-scope .mf-team__member img {
+          width: 140px;
+          height: auto;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 12px;
+          aspect-ratio: 1 / 1;
+          border: 3px solid #ddd;
+      }
 
-.mf-scope .mf-team__member img{
-  width: 140px;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 12px;
-  aspect-ratio: 1 / 1;
-  border: 3px solid #ddd;
-}
+      .mf-scope .mf-team__member h3 {
+          font-size: 1.1rem;
+          color: #444;
+          margin-bottom: 3px;
+      }
 
-.mf-scope .mf-team__member h3{
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 3px;
-}
+      .mf-scope .mf-team__member p {
+          font-size: 0.85rem;
+      }
 
-.mf-scope .mf-team__member p{
-  font-size: 0.85rem;
-  color: #666;
-}
+      /* Arrows */
+      .mf-scope .mf-team__arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          appearance: none;
+          border: none;
+          background: #fff;
+          color: #333;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+          cursor: pointer;
+          font-size: 20px;
+          display: grid;
+          place-items: center;
+          transition: background 0.2s ease, transform 0.2s ease;
+      }
 
-/* Arrows */
-.mf-scope .mf-team__arrow{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  appearance: none;
-  border: none;
-  background: #fff;
-  color: #333;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  cursor: pointer;
-  font-size: 20px;
-  display: grid;
-  place-items: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
+      .mf-scope .mf-team__arrow--left {
+          left: -36px;
+      }
 
-.mf-scope .mf-team__arrow--left{ left: -36px; }
-.mf-scope .mf-team__arrow--right{ right: -36px; }
+      .mf-scope .mf-team__arrow--right {
+          right: -36px;
+      }
 
-.mf-scope .mf-team__arrow:hover{
-  background: #f2f2f2;
-  transform: translateY(-50%) scale(1.06);
-}
+      .mf-scope .mf-team__arrow:hover {
+          background: #f2f2f2;
+          transform: translateY(-50%) scale(1.06);
+      }
 
-.mf-scope .mf-team__arrow:disabled{
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+      .mf-scope .mf-team__arrow:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
+      }
 
-/* Responsive adjustments */
-@media (max-width: 900px){
-  .mf-scope .mf-team__row{ padding: 20px 70px; }
-  .mf-scope .mf-team__arrow{ width: 38px; height: 38px; font-size: 18px; }
+      /* Responsive adjustments */
+      @media (max-width: 900px) {
+          .mf-scope .mf-team__row {
+              padding: 20px 70px;
+          }
 
-  .mf-scope .mf-team__container{
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
+          .mf-scope .mf-team__arrow {
+              width: 38px;
+              height: 38px;
+              font-size: 18px;
+          }
 
-@media (max-width: 560px){
-  .mf-scope .mf-team__row{ padding: 16px 62px; }
+          .mf-scope .mf-team__container {
+              justify-content: center;
+              flex-wrap: wrap;
+          }
+      }
 
-  .mf-scope .mf-team__container{
-    flex-direction: column;
-    align-items: center;
-  }
+      @media (max-width: 768px) {
+          .mf-scope .mf-team__row {
+              padding: 16px 62px;
+          }
 
-  .mf-scope .mf-team__member{
-    width: 100%;
-    max-width: 260px;
-  }
-}
+          .mf-scope .mf-team__container {
+              flex-direction: row;
+              align-items: center;
+          }
 
-/* ===== Tighten spacing for Meet Our Team ===== */
-.mf-scope .mf-team,
-.mf-scope .team{
-  padding: 48px 10% 56px;   
-  margin-top: 18px;         
-}
+          .mf-scope .mf-team__member {
+              width: 100%;
+              max-width: 260px;
+          }
+      }
 
-/* Title closer to the team container */
-.mf-scope .mf-team__title,
-.mf-scope .team h2{
-  margin: 0 0 22px;        
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
+      /* ===== Tighten spacing for Meet Our Team ===== */
+      .mf-scope .mf-team,
+      .mf-scope .team {
+          padding: 48px 10% 56px;
+          margin-top: 18px;
+      }
 
-/* Reduce vertical padding */
-.mf-scope .mf-team__row,
-.mf-scope .team-row{
-  padding: 14px 72px;       
-}
+      /* Title closer to the team container */
+      .mf-scope .mf-team__title,
+      .mf-scope .team h2 {
+          margin: 0 0 22px;
+          font-weight: 700;
+          letter-spacing: 0.2px;
+      }
 
-.mf-scope .mf-team__container,
-.mf-scope .team-container{
-   margin-bottom: 0;       
-}
+      /* Reduce vertical padding */
+      .mf-scope .mf-team__row,
+      .mf-scope .team-row {
+          padding: 14px 72px;
+      }
 
-/* ===== Make Meet Our Team feel same as MVV ===== */
+      .mf-scope .mf-team__container,
+      .mf-scope .team-container {
+          margin-bottom: 0;
+      }
 
-/* Reduce section height */
-.mf-scope .mf-team,
-.mf-scope .team{
-  padding: 36px 0 40px;   
-  margin-top: 18px;
-}
+      /* ===== Make Meet Our Team feel same as MVV ===== */
 
-/* Constrain Team content to the same width as MVV */
-.mf-scope .mf-team__row,
-.mf-scope .team-row{
-  width: min(var(--content), calc(100% - var(--page-pad)));
-  margin: 0 auto;
-  padding: 12px 64px;     
-}
+      /* Reduce section height */
+      .mf-scope .mf-team,
+      .mf-scope .team {
+          padding: 36px 0 40px;
+          margin-top: 18px;
+      }
 
-/* Bring heading closer to the cards */
-.mf-scope .mf-team__title,
-.mf-scope .team h2{
-  margin: 0 0 16px;      
-  font-size: clamp(1.35rem, 1.3vw, 1.7rem);
-  font-weight: 700;
-  color: #666;
-}
+      /* Constrain Team content to the same width as MVV */
+      .mf-scope .mf-team__row,
+      .mf-scope .team-row {
+          width: min(var(--content), calc(100% - var(--page-pad)));
+          margin: 0 auto;
+          padding: 12px 64px;
+      }
 
-/* Reduce card height so the section isn’t tall */
-.mf-scope .mf-team__member,
-.mf-scope .team-member{
-  min-height: 200px;      
-  padding: 14px 12px;
-}
+      /* Bring heading closer to the cards */
+      .mf-scope .mf-team__title,
+      .mf-scope .team h2 {
+          margin: 0 0 16px;
+          font-size: clamp(1.35rem, 1.3vw, 1.7rem);
+          font-weight: 700;
+      }
 
-/* Slightly reduce container size */
-.mf-scope .mf-team__member img,
-.mf-scope .team-member img{
-  width: 84px;
-  height: 84px;
-  margin-bottom: 10px;
-}
+      /* Reduce card height so the section isn’t tall */
+      .mf-scope .mf-team__member,
+      .mf-scope .team-member {
+          min-height: 200px;
+          padding: 14px 12px;
+      }
 
-/* arrows inward so they still align with the narrower row */
-.mf-scope .mf-team__arrow--left,
-.mf-scope .team-arrow.left{
-   left: 12px;
-}
-.mf-scope .mf-team__arrow--right,
-.mf-scope .team-arrow.right{
-  right: 12px;
-}
+      /* Slightly reduce container size */
+      .mf-scope .mf-team__member img,
+      .mf-scope .team-member img {
+          width: 84px;
+          height: 84px;
+          margin-bottom: 10px;
+      }
 
-/* Bigger section heading */
-.mf-scope .mf-team__title,
-.mf-scope .team h2{
-  font-size: clamp(1.5rem, 1.6vw, 1.95rem);
-}
+      /* arrows inward so they still align with the narrower row */
+      .mf-scope .mf-team__arrow--left,
+      .mf-scope .team-arrow.left {
+          left: 12px;
+      }
 
-/* Force the visible team cards to stay in the center under the title */
-.mf-scope .mf-team__container,
-.mf-scope .team-container{
-  justify-content: center !important;   
-  gap: 16px;                             
-  width: 100%;
-}
+      .mf-scope .mf-team__arrow--right,
+      .mf-scope .team-arrow.right {
+          right: 12px;
+      }
 
-/* ensure each card is equal width so centering is exact */
-.mf-scope .mf-team__member,
-.mf-scope .team-member{
-flex: 0 0 220px;      
-max-width: 220px;
-}
+      /* Bigger section heading */
+      .mf-scope .mf-team__title,
+      .mf-scope .team h2 {
+          font-size: clamp(1.5rem, 1.6vw, 1.95rem);
+      }
 
-/* === Team: perfect alignment + equal card sizing === */
+      /* Force the visible team cards to stay in the center under the title */
+      .mf-scope .mf-team__container,
+      .mf-scope .team-container {
+          justify-content: center !important;
+          gap: 16px;
+          width: 100%;
+      }
 
-.mf-scope .mf-team__title,
-.mf-scope .team h2{
-  width: min(var(--content), calc(100% - var(--page-pad)));
-  margin: 0 auto 18px; 
-  text-align: center;
+      /* ensure each card is equal width so centering is exact */
+      .mf-scope .mf-team__member,
+      .mf-scope .team-member {
+          max-width: 220px;
+      }
 
-  /* slightly bigger */
-  font-size: clamp(1.6rem, 1.75vw, 2.05rem);
-  font-weight: 700;
-}
+      /* === Team: perfect alignment + equal card sizing === */
 
-/* 2) Make the row the same width and center everything inside it */
-.mf-scope .mf-team__row,
-.mf-scope .team-row{
-  width: min(var(--content), calc(100% - var(--page-pad)));
-  margin: 0 auto;
-  position: relative;
+      .mf-scope .mf-team__title,
+      .mf-scope .team h2 {
+          width: min(var(--content), calc(100% - var(--page-pad)));
+          margin: 0 auto 18px;
+          text-align: center;
 
-  /* keep room for arrows not shifting the center */
-  padding: 12px 64px;
-  box-sizing: border-box;
-}
+          /* slightly bigger */
+          font-size: clamp(1.6rem, 1.75vw, 2.05rem);
+          font-weight: 700;
+      }
 
-/* 3) Ensure viewport takes full available width */
-.mf-scope .mf-team__viewport,
-.mf-scope .team-viewport{
-  width: 100%;
-  overflow: hidden;
-}
+      /* 2) Make the row the same width and center everything inside it */
+      .mf-scope .mf-team__row,
+      .mf-scope .team-row {
+          width: min(var(--content), calc(100% - var(--page-pad)));
+          margin: 0 auto;
+          position: relative;
 
-/* 4) Center the VISIBLE cards group so middle card aligns with title */
-.mf-scope .mf-team__container,
-.mf-scope .team-container{
-  display: flex;
-  justify-content: center !important;
-  align-items: stretch;
-  gap: 16px;
-  width: 100%;
-}
+          /* keep room for arrows not shifting the center */
+          padding: 12px 64px;
+          box-sizing: border-box;
+      }
+
+      /* 3) Ensure viewport takes full available width */
+      .mf-scope .mf-team__viewport,
+      .mf-scope .team-viewport {
+          width: 100%;
+          overflow: hidden;
+      }
+
+      /* 4) Center the VISIBLE cards group so middle card aligns with title */
+      .mf-scope .mf-team__container,
+      .mf-scope .team-container {
+          display: flex;
+          justify-content: center !important;
+          align-items: stretch;
+          gap: 20px;
+          width: 100%;
+          flex-wrap: nowrap;
+          padding: 10px 0;
+      }
+
+      .about {
+          font-size: 20px;
+      }
+
+      
+ 
