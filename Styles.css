@@ -27,13 +27,14 @@ body {
 body {
 	-ms-overflow-style: scrollbar;
 	font-family: "Roboto", sans-serif;
+	width: 90.5;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 2470) {
 
 	html,
 	body {
-		min-width: 320px;
+		min-width: 320;
 	}
 
 }
