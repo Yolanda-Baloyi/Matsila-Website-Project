@@ -6,7 +6,7 @@
 body {
     font-family: "Roboto", sans-serif !important;
 
-     /* 45-degree angled background 
+    /* 45-degree angled background 
             background: linear-gradient(45deg,
                 blue 0%, blue 30%,
                 pink 31%, pink 75%,
@@ -95,7 +95,7 @@ h6 {
     .header-list {
         display: none;
         position: absolute !important;
-        background-color: rgb(219, 211, 211);
+        background-color: #dfdaf4;
         top: 40px;
         right: -9px;
         padding: 0px 20px 10px 22px;
@@ -107,7 +107,7 @@ h6 {
         display: none;
         margin-right: 5px;
         position: absolute !important;
-        background-color: rgb(219, 211, 211);
+        background-color: #dfdaf4;
         top: 60px;
         right: -9px;
         padding: 0px 20px 10px 22px;
@@ -210,8 +210,41 @@ h6 {
     padding: 10px;
     border-radius: 4px;
     color: white;
+
 }
 
+/* donate modal styles */
+
+.donate-modal {
+    position: absolute;
+    /* display: none; */
+    margin: 50px 0;
+    padding: 10px;
+    background-color: rgb(248, 242, 242);
+z-index: 10;
+width: 200px;
+height: 200px;
+    right: 500px;
+
+}
+@media (max-width:768px) {
+    .donate-modal{
+        right: 0;
+        left: 70px;
+
+    }
+}
+@media (min-width:769px) and (max-width:1024px) {
+    .donate-modal{
+        right: 330px;
+    }
+}
+
+.close-donate{
+    font-size: 40px;
+    position: relative;
+    padding: 20px;
+}
 /* Only images inside my page wrapper */
 .mf-scope img {
     max-width: 100%;
@@ -224,7 +257,7 @@ h6 {
     border: 0;
     cursor: pointer;
     text-decoration: none;
-    background:#f5d389;
+    background: #f5d389;
     color: #333;
     padding: .85rem 1.6rem;
     border-radius: 2px;
@@ -497,10 +530,12 @@ h6 {
 .gallery {
     width: 880px;
     margin: 20px auto;
-    background-color: #b6cfb6;
-    padding: 20px 0;
+    background-color: #e7f5e7;
+    padding: 1px 0;
     border-radius: 8px;
-    box-shadow:0 10px 30px rgba(0, 0, 0, .08) ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .09);
+    padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 @media (max-width:768px) {
@@ -617,7 +652,7 @@ h6 {
     position: fixed;
     width: 900px;
     height: 600px;
-    margin: 120px 0 0 185px;
+    margin: 120px 0 0 1px;
     background-color: rgb(81, 80, 80, 0.88);
     z-index: 10;
     top: 0;
@@ -626,9 +661,9 @@ h6 {
 
 @media (min-width:769px) and (max-width:1024px) {
     .modal {
-        width: 770px;
+        width: 800px;
         height: 500px;
-        margin: 100px 0px 0px 35px;
+        margin: 100px 0px 0px 0px;
         padding: 0;
         top: 150px;
     }
@@ -664,7 +699,7 @@ h6 {
     font-size: 20px;
     position: absolute;
     top: 250px;
-    background-color: #f5a2d1;
+    background-color: #f5d389;
     border: none;
     margin: 20px;
     font-size: 30px;
@@ -707,7 +742,7 @@ h6 {
     background-color: #f3f0ff;
     margin-top: 40px;
     border-radius: 8px;
-    box-shadow:0 10px 30px rgba(0, 0, 0, .08) ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
 .mf-scope .mf-team__title {
@@ -880,22 +915,28 @@ h6 {
 /* Reduce section height */
 .mf-scope .mf-team,
 .mf-scope .team {
-    padding: 36px 0 40px;
+    padding: 26px 0 20px;
     margin-top: 18px;
     width: 880px;
     margin: 0 auto;
 }
-@media (min-width:769px) and (max-width:1024px) {
-    .mf-scope .mf-team,
-.mf-scope .team  {
-        width: 94% ;
-    }}
 
-    @media (max-width:768px) {
+@media (min-width:769px) and (max-width:1024px) {
+
     .mf-scope .mf-team,
-.mf-scope .team  {
+    .mf-scope .team {
+        width: 95%;
+    }
+}
+
+@media (max-width:768px) {
+
+    .mf-scope .mf-team,
+    .mf-scope .team {
         width: 340px;
-    }}
+    }
+}
+
 /* Constrain Team content to the same width as MVV */
 .mf-scope .mf-team__row,
 .mf-scope .team-row {
@@ -963,11 +1004,11 @@ h6 {
 .mf-scope .mf-team__title,
 .mf-scope .team h2 {
     width: min(var(--content), calc(100% - var(--page-pad)));
-    margin: 0 auto 18px;
+    margin: 0 auto 0px;
     text-align: center;
 
     /* slightly bigger */
-    font-size: clamp(1.2rem, 1.45vw, 2.05rem);
+    font-size: clamp(1.2rem, 1.1vw, 2.05rem);
     font-weight: 600;
 }
 
@@ -1017,18 +1058,22 @@ h6 {
     z-index: 2;
     padding-bottom: 20px;
     border-radius: 8px;
-    box-shadow:0 10px 30px rgba(0, 0, 0, .08) ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    margin-bottom: 50px;
 }
 
 @media (max-width:768px) {
-    .main{
-        width:350px !important ;
+    .main {
+        width: 350px !important;
     }
 }
+
 @media (min-width:769px) and (max-width:1024px) {
     .main {
-        width: 800px !important;
-    }}
+        width: 760px !important;
+
+    }
+}
 
 .main>*:first-child {
     border-top: 0;
@@ -1106,12 +1151,14 @@ h6 {
     left: 60px;
     margin-bottom: 20px;
 }
+
 @media (max-width:768px) {
-    .main>.posts{
+    .main>.posts {
         width: 85%;
         left: 30px;
     }
 }
+
 .main>.posts>* {
     -moz-flex-shrink: 1;
     -webkit-flex-shrink: 1;
@@ -1141,12 +1188,16 @@ h6 {
     text-align: center;
     margin: 5px;
 }
-.main>.posts>article  h2 a{
+
+.main>.posts>article h2 a {
     color: #f5d389;
 }
- .main>.posts>article> :last-child {
+
+.main>.posts>article> :last-child {
     margin-bottom: 2px;
+    text-align: justify;
 }
+
 /*
 .main>.posts>article:nth-child(2n - 1) {
     border-left-width: 2px;
@@ -1161,7 +1212,8 @@ h6 {
     .main>.posts>* {
         padding: 2.5rem;
         width: 75%;
-    }}
+    }
+}
 
 
 .major h2 {
@@ -1190,7 +1242,7 @@ h2 a {
         width: 100%;
     }
 
-    .main>.posts>article:nth-child(2n - 1) {
+    /* .main>.posts>article:nth-child(2n - 1) {
         border-left-width: 2px;
     }
 
@@ -1204,7 +1256,7 @@ h2 a {
 
     .main>.posts>article:nth-child(-n + 1) {
         border-top-width: 2px;
-    }
+    } */
 
     .main>.posts>article .image {
         max-width: 25rem;
@@ -1223,7 +1275,7 @@ h2 a {
 }
 
 /* Actions */
-input.primary{
+input.primary {
     padding: 10px;
     background: black;
     color: white;
@@ -1231,8 +1283,9 @@ input.primary{
     font-family: "Roboto", sans-serif;
     border: none;
 }
-input[type="reset"]{
- padding: 10px;
+
+input[type="reset"] {
+    padding: 10px;
     background: white;
     color: black;
     font-size: 16px;
@@ -1529,15 +1582,17 @@ ul.alt li:first-child {
     max-width: 72rem;
     z-index: 2;
     border-radius: 8px;
-    box-shadow:0 10px 30px rgba(0, 0, 0, .08) ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
-@media (max-width:768px){
-#contact{
-    width: 350px !important;
+
+@media (max-width:768px) {
+    #contact {
+        width: 350px !important;
+    }
 }
-}
+
 @media (min-width:769px) and (max-width:1024px) {
-    #contact{
+    #contact {
         width: 760px !important;
     }
 }
@@ -1551,7 +1606,7 @@ ul.alt li:first-child {
 }
 
 #contact>.inner> :nth-child(2n - 1) {
-    padding: 5em 4em 1em 0;
+    padding: 1.5em 4em 1em 0;
     border-right: solid 1px rgb(255, 255, 255);
     width: 45%;
 }
@@ -1560,21 +1615,25 @@ ul.alt li:first-child {
     padding-left: 2em;
     width: 1200px;
 }
-@media (max-width:768px){
-#contact>.inner> :nth-child(2n) {
-    padding-left: 3em !important;
+
+@media (max-width:768px) {
+    #contact>.inner> :nth-child(2n) {
+        padding-left: 3em !important;
+    }
 }
-}
+
 #contact>.inner>.split {
     padding: 0;
 }
+
 @media (min-width:769px) and (max-width:1024px) {
-   #contact>.inner>.split {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 60px;
-   } 
+    #contact>.inner>.split {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 60px;
+    }
 }
+
 #contact>.inner>.split>* {
     padding: 3em 0 1em 3em;
     position: relative;
@@ -1634,13 +1693,16 @@ ul.alt li:first-child {
 form {
     margin: 0 0 2rem 0;
 }
+
 @media (max-width:768px) {
-    form{
+    form {
         padding: 10px 15px;
     }
 }
+
 form> :last-child {
     margin: 29px;
+    margin-left: -5px;
 }
 
 form>.fields {
@@ -1711,10 +1773,8 @@ label {
     color: #070707;
     display: block;
     font-size: 0.8em;
-    font-weight: 600;
-    letter-spacing: 0.25em;
     margin: 0 0 1em 0;
-    text-transform: uppercase;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 980px) {
@@ -1747,17 +1807,20 @@ textarea {
     text-decoration: none;
     width: 100%;
 }
-@media (max-width:768px){
 
-    input[type="text"]{
-    width: 65%;
+@media (max-width:768px) {
+
+    input[type="text"] {
+        width: 65%;
     }
 }
-@media (max-width:768px){
-textarea{
-    width: 85%;
+
+@media (max-width:768px) {
+    textarea {
+        width: 85%;
     }
 }
+
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
