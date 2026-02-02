@@ -89,13 +89,6 @@ nextBtn.addEventListener('click', showNextImage);
 prevBtn.addEventListener('click', showPrevImage);
 closeModal.addEventListener('click', closeModalFunc);
 
-// Close modal when clicking outside the image
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    closeModalFunc();
-  }
-});
-
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (modal.style.display === 'flex') {
@@ -156,6 +149,29 @@ closeButton.addEventListener('click', function closeMenu() {
   list.style.display = "none";
 })
  
+ // donate Button 
+
+let donateBTN=document.querySelectorAll('.donate');
+let donateModal= document.querySelector('.donate-modal');
+
+donateBTN.forEach(button =>{
+button.addEventListener('click', function (){
+  donateModal= document.querySelector('.donate-modal');
+
+  donateModal.style.display = "block";
+  } )
+
+})
+
+
+let closeDonateModal =document.querySelector('.close-donate');
+
+closeDonateModal.addEventListener('click', function(){
+
+  let donateModal= document.querySelector('.donate-modal');
+
+  donateModal.style.display = "none";
+})
 
  /* About Us Read More */
  
@@ -281,4 +297,31 @@ document.addEventListener('DOMContentLoaded', () => {
  
   rerender();})
  
- 
+  //email and form 
+  document.getElementById('response').addEventListener('submit', function(e) {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Set the email subject
+        const subject = `Message from ${name} via Website Contact Form`;
+        
+        // Construct the mailto URL with subject and body
+        const mailtoURL = `mailto:info@matsilaydf.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + "\nEmail: " + email)}`;
+        
+        // Update the form action
+        this.action = mailtoURL;
+        
+        // The form will open in a new tab due to target="_blank"
+        // The current page will remain open
+        
+        // Optional: Add a slight delay to ensure form submission happens
+        setTimeout(() => {
+            // Reset the form after submission
+            this.reset();
+            
+            // Optional: Show confirmation message
+            alert('Your email client is opening. Please send the email from there.');
+        }, 100);
+    });
