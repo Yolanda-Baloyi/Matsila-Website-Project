@@ -218,33 +218,46 @@ h6 {
 .donate-modal {
     position: absolute;
     display: none;
-    margin: 50px 0;
+    margin: 50px;
     padding: 10px;
     background-color: rgb(248, 242, 242);
-z-index: 10;
-width: 200px;
-height: 200px;
-    right: 500px;
+    z-index: 10;
+    width: 350px;
+    height: 350px;
+    right: 450px;
 
 }
+
 @media (max-width:768px) {
-    .donate-modal{
+    .donate-modal {
         right: 0;
         left: 70px;
-
+        width: 200px;
+        height: 200px;
+         margin: 50px 0;
     }
 }
+
 @media (min-width:769px) and (max-width:1024px) {
-    .donate-modal{
+    .donate-modal {
         right: 330px;
+        width: 200px;
+        height: 200px;
+         margin: 50px 0;
     }
 }
 
-.close-donate{
+@media (min-width:1024px) {
+   .donate-modal{
+    right: 650px;
+   }
+}
+.close-donate {
     font-size: 40px;
     position: relative;
     padding: 20px;
 }
+
 /* Only images inside my page wrapper */
 .mf-scope img {
     max-width: 100%;
@@ -530,7 +543,7 @@ height: 200px;
 .gallery {
     width: 880px;
     margin: 20px auto;
-    background-color: #e7f5e7;
+    background-color: #f5d389;
     padding: 1px 0;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .09);
@@ -651,7 +664,7 @@ height: 200px;
 .modal {
     position: fixed;
     width: 900px;
-    height: 600px;
+    height: auto;
     margin: 120px 0 0 1px;
     background-color: rgb(81, 80, 80, 0.88);
     z-index: 10;
@@ -673,7 +686,7 @@ height: 200px;
     .modal {
         width: 350px;
         height: auto;
-        margin: 100px 20px 20px -5px;
+        margin: 0px 0px 0px -20px;
         padding: 0;
         top: 80px;
     }
@@ -693,7 +706,11 @@ height: 200px;
     padding: 20px;
     cursor: pointer;
 }
-
+@media (max-width:768px) {
+    .close {
+        padding: 5px 15px 0 0;
+    }
+}
 .prev,
 .next {
     font-size: 20px;
@@ -720,7 +737,7 @@ height: 200px;
 .new-images {
     display: flex;
     width: 400px;
-    margin: 70px auto;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -728,10 +745,25 @@ height: 200px;
     .new-images {
         width: 180px;
         height: 180px;
-        margin: 0px auto 40px;
+        margin: 0px auto;
     }
 }
-
+.text{
+    display: none;
+}
+.image-text{
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.image-text a{
+    color: #f5d389;
+}
+@media (max-width:768px) {
+    .image-text {
+        font-size: 14px;
+    }
+}
 /* =========================================================
    MEET OUR TEAM (renamed classes to avoid collisions)
    ========================================================= */

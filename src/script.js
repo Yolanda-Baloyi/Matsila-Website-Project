@@ -6,7 +6,7 @@ const closeModal = document.querySelector('.close');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const newImgContainer = document.querySelector('.new-images');
-// Variables to track current state
+const imageTextContainer = document.querySelector('.image-text');
 let currentGalleryIndex = 0;
 let currentImageIndex = 0;
 let allImages = [];
@@ -16,6 +16,7 @@ galleryItems.forEach((galleryItem, index) => {
   galleryItem.addEventListener('click', () => {
     currentGalleryIndex = index;
     loadModalImages();
+    loadModalText();
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // Prevent scrolling
   });
@@ -44,7 +45,27 @@ function loadModalImages() {
   currentImageIndex = 0;
   updateNavButtons();
 }
-
+// Load text from clicked gallery into modal
+function loadModalText() {
+  // Get the text element from the clicked gallery
+  const textElement = galleryItems[currentGalleryIndex].querySelector('.text');
+  
+  // Clear previous text and add new text
+  if (textElement) {
+    // Clone the element to preserve any HTML formatting (like links)
+    const textClone = textElement.cloneNode(true);
+    
+    // Remove the d-none class if it exists (to make it visible in modal)
+    textClone.style.display="block";
+    
+    // Clear the container and add the text
+    imageTextContainer.innerHTML = '';
+    imageTextContainer.appendChild(textClone);
+  } else {
+    // If no text element found, clear the container
+    imageTextContainer.innerHTML = '';
+  }
+}
 // Navigation functions
 function showNextImage() {
   if (allImages.length === 0) return;
