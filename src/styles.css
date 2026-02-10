@@ -224,14 +224,14 @@ h6 {
     z-index: 10;
     width: 350px;
     height: 350px;
-    right: 450px;
+    right: 400px !important;
 
 }
 
 @media (max-width:768px) {
     .donate-modal {
         right: 0;
-        left: 70px;
+        left: 90px;
         width: 200px;
         height: 200px;
          margin: 50px 0;
@@ -247,9 +247,9 @@ h6 {
     }
 }
 
-@media (min-width:1024px) {
+@media (min-width:1028px) {
    .donate-modal{
-    right: 650px;
+    right: 450px;
    }
 }
 .close-donate {
